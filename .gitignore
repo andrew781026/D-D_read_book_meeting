@@ -1,0 +1,40 @@
+.DS_Store
+node_modules
+/web/dist
+/express/images
+
+# lock file
+yarn.lock
+package-lock.json
+
+# gen
+# A leading "**" followed by a slash means match in all directories. => https://git-scm.com/docs/gitignore
+**/gen
+proxy/auth
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+access-*
+error-*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# firebase
+.firebase
+
+# test
+/test/screenshots/*.png
