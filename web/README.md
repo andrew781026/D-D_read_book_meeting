@@ -1,10 +1,26 @@
 # read book meeting web
 
-目前 react 使用 create-react-app 建構基礎框架
+網頁部分 , 使用 React.JS 進行開發
 
-> 開發
+為求簡單 , 我們使用 create-react-app 建構基礎框架並且不 eject
 
-開啟 webpack-dev-server 在 http://localhost:3000 上
+### 技術清單 :
+
+- [react](https://zh-hant.reactjs.org/) - 前端三大框架之一
+- [react-live](https://www.npmjs.com/package/react-live) - 方便 React 客製元件 Demo 的工具  
+- [material-UI](https://material-ui.com/zh/getting-started/installation/) - 符合 google 設計規範的 UI 框架 
+- [formik](https://formik.org/docs/overview) - facebook 推薦的表單管理框架
+
+### 前置安裝
+
+下方為需要先安裝的一些程式
+
+- [node.JS](https://nodejs.org/en/download/) - 前端開發必定安裝的 EXE 
+- [vscode](https://code.visualstudio.com/) - 免費好用的 FrontEnd IDE
+
+> 如何開發 ?
+
+使用 `npm run start` 你將會在 http://localhost:3000 上開啟 webpack-dev-server
 
 ```shell script
 npm run start 
@@ -28,3 +44,5 @@ npm run build
 使用 material-ui 當做 UI 框架
 
 https://material-ui.com/zh/getting-started/installation/
+
+如果需要存 CSS 框架可用 [materialize](https://materializecss.com/)
