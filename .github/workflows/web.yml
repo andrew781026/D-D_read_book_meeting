@@ -14,13 +14,13 @@ on:
   workflow_dispatch:
     inputs:
           name:
-            description: 'Person to greet'
+            description: '執行人員'
             required: true
-            default: 'Mona the Octocat'
-          home:
-            description: 'location'
+            default: 'Andrew'
+          date:
+            description: '執行時間'
             required: false
-            default: 'The Octoverse'
+            default: '2019-12-15T00:00:00.00+08:00 ( [date]T[time]+[timezone] )'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
