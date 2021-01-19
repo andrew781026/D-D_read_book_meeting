@@ -1,1 +1,6 @@
 Android APP 開發 , 請在此製作
+
+Kotlin
+Coroutine
+MVVM
+Livedata
