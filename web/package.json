@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "license": "MIT",
+  "homepage": "https://andrew781026.github.io/D-D_read_book_meeting/",
   "dependencies": {
     "@material-ui/core": "^4.11.2",
     "@testing-library/jest-dom": "^5.11.9",
@@ -14,7 +15,8 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "windows:start": "set PORT=3006 && set PUBLIC_URL=http://localhost:3006/D-D_read_book_meeting/&& react-scripts start",
+    "linux:start": "PORT=3006 PUBLIC_URL=http://localhost:3006/D-D_read_book_meeting/ react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
