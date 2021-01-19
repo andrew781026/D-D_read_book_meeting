@@ -15,7 +15,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "windows:start": "set PORT=3006 && set PUBLIC_URL=http://localhost:3006/D-D_read_book_meeting/&& react-scripts start",
+    "windows:start": "react-scripts start",
     "linux:start": "PORT=3006 PUBLIC_URL=http://localhost:3006/D-D_read_book_meeting/ react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

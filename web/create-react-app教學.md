@@ -35,3 +35,7 @@ set PORT=3006 && react-scripts start
 ```shell
 set PORT=3006 && set PUBLIC_URL=http://localhost:3006/D-D_read_book_meeting/&& react-scripts start
 ```
+
+### 利用 .env 檔案設定參數
+
+官方文件 : https://create-react-app.dev/docs/adding-custom-environment-variables/#adding-development-environment-variables-in-env
