@@ -1,0 +1,53 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Web-CI
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  # push:
+  #   branches: [ master ]
+  # pull_request:
+  #   branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+          name:
+            description: '執行人員'
+            required: true
+            default: 'Andrew'
+          date:
+            description: '執行時間'
+            required: false
+            default: '2019-12-15T00:00:00.00+08:00 ( [date]T[time]+[timezone] )'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # install node.js
+      - uses: actions/setup-node@v1
+
+      # Runs a single command using the runners shell
+      - name: install dependencies
+        run: cd web && npm install
+
+      # Runs a single command using the runners shell
+      - name: try to build the project
+        run: cd web && npm run build
+
+      # use actions-gh-pages to deploy dist to gh-pages
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./web/build
