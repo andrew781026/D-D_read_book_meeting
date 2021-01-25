@@ -8,6 +8,7 @@ services:
   app:
     image: node:15.6.0
     command: sh -c "npm install && npm run start"
+    restart: always
     ports:
       - 3000:3000
     working_dir: /app
