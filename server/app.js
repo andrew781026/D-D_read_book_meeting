@@ -4,6 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerJsdoc = require('swagger-jsdoc');
+const basicAuth = require('express-basic-auth');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -22,6 +26,43 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+const options = {
+  swaggerDefinition: {
+    openapi: "3.0.1",
+    info: {
+      title: "Book Club",
+      version: "1.0.0",
+      description: 'Book Club API',
+      contact: {
+        name: 'Cai Ci Jhan',
+        email: 'ordinarycas@gmail.com',
+      }
+    },
+    servers: [
+      {
+        url: "http://localhost:3000",
+      },
+    ],
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: "http",
+          scheme: "bearer",
+          bearerFormat: "JWT",
+        },
+      },
+    },
+    security: [
+      {
+        bearerAuth: [],
+      },
+    ],
+  },
+  apis: ["./routes/*.js"],
+};
+const swaggerSpecs = swaggerJsdoc(options);
+
+app.use('/api-doc', swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
