@@ -1,0 +1,38 @@
+version: "3.9"
+
+networks:
+  backend:
+    driver: bridge
+
+services:
+  app:
+    image: node:15.6.0
+    command: sh -c "npm install && npm run start"
+    ports:
+      - 3000:3000
+    working_dir: /app
+    volumes:
+      - ./:/app
+    networks:
+      - backend
+
+  db:
+    image: mariadb:10.5.8
+    restart: always
+    volumes:
+      - ./mariadb-data:/var/lib/mysql
+    environment:
+      MYSQL_USER: booker
+      MYSQL_PASSWORD: 20210125
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: book_club
+    networks:
+      - backend
+
+  adminer:
+    image: adminer:4.7.8
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - backend
