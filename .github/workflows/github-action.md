@@ -7,6 +7,8 @@
 - [trigger](https://docs.github.com/cn/actions/reference/events-that-trigger-workflows) - 觸發 Action 執行 Job 的時機
 - [job](https://docs.github.com/cn/actions/learn-github-actions/migrating-from-gitlab-cicd-to-github-actions#jobs) - 觸發後 , 需要執行的工作
 
+[![](https://docs.github.com/assets/images/help/images/overview-actions-design.png)](https://docs.github.com/cn/actions/learn-github-actions/introduction-to-github-actions)
+
 ## 目前專案使用
 
 目前專案在 web 部分使用 手動建置( workflow_dispatch ) 的模式 , 發佈到 [gh-page](https://andrew781026.github.io/D-D_read_book_meeting/) 
