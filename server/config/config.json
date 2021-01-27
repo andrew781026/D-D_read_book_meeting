@@ -1,0 +1,10 @@
+{
+    "development": {
+        "username": "booker",
+        "password": "20210125",
+        "database": "book_club",
+        "host": "db",
+        "port": 3306,
+        "dialect": "mariadb"
+    }
+}
