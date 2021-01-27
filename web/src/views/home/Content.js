@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
         marginLeft: '8px',
         padding: '15px',
         backgroundColor: '#3ce2fa',
-        maxWidth: '200px'
+        width: '250px'
     },
     title: {
         lineHeight: '150px',
