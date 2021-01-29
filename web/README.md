@@ -46,3 +46,11 @@ npm run build
 https://material-ui.com/zh/getting-started/installation/
 
 如果需要存 CSS 框架可用 [materialize](https://materializecss.com/)
+
+### 解決 gh-pages 沒有 url-rewrites 的方法
+
+#### 以下方法參考 [spa-github-pages](https://github.com/rafgraph/spa-github-pages)
+
+- 1. 利用 github 可以客製化 404.html 頁面
+    - add 404.html [same as this](https://github.com/rafgraph/spa-github-pages/blob/gh-pages/404.html#L25)
+- 2. 修改 index.html 接收 404.html 轉過來的參數
