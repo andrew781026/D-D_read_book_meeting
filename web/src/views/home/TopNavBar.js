@@ -10,7 +10,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 
 // react-router
-import { useHistory } from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 // icons
 import MenuIcon from '@material-ui/icons/Menu';
@@ -198,21 +198,23 @@ export default function PrimarySearchAppBar() {
                     </div>
                     <div className={classes.grow}/>
                     <div className={classes.sectionDesktop}>
-                        <IconButton title="活動列表" color="inherit">
-                            <ViewListIcon onClick={
-                                () => {
-                                    /* React-Router to List */
-                                    history.push("/list");
-                                }
-                            }/>
+                        <IconButton title="活動列表" color="inherit"
+                                    onClick={
+                                        () => {
+                                            /* React-Router to List */
+                                            history.push("/list");
+                                        }
+                                    }>
+                            <ViewListIcon/>
                         </IconButton>
-                        <IconButton title="新增活動" color="inherit">
-                            <AddIcon onClick={
-                                () => {
-                                    /* React-Router to Add */
-                                    history.push("/add");
-                                }
-                            }/>
+                        <IconButton title="新增活動" color="inherit"
+                                    onClick={
+                                        () => {
+                                            /* React-Router to List */
+                                            history.push("/add");
+                                        }
+                                    }>
+                            <AddIcon/>
                         </IconButton>
                         <IconButton aria-label="show 17 new notifications" color="inherit">
                             <Badge badgeContent={17} color="secondary">
