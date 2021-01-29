@@ -1,11 +1,12 @@
 import React from "react";
 import {Button, Card, CardContent, CardActions, Typography} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
+import EventService from "../../services/event";
 
 const useStyles = makeStyles(theme => ({
-    root:{
-        overflowY:'auto',
-        maxHeight:'calc(100vh - 64px)',
+    root: {
+        overflowY: 'auto',
+        maxHeight: 'calc(100vh - 64px)',
         [theme.breakpoints.down('xs')]: {
             maxHeight: 'calc(100vh - 56px)',
         },
@@ -61,17 +62,6 @@ const useSimpleCardStyles = makeStyles({
         boxShadow: '0 0 5px 2px rgba(0,0,0,0.2)',
         margin: '20px'
     },
-    bullet: {
-        display: 'inline-block',
-        margin: '0 2px',
-        transform: 'scale(0.8)',
-    },
-    title: {
-        fontSize: 14,
-    },
-    pos: {
-        marginBottom: 12,
-    },
 });
 
 function SimpleCard(props) {
@@ -91,9 +81,9 @@ function SimpleCard(props) {
                     {props.title}
                 </Typography>
                 <Typography variant="h5" component="h2">
-                    活動時間 : {formatTime(props.time)}
+                    活動時間 : {props.time}
                 </Typography>
-                <Typography className={classes.pos} color="textSecondary">
+                <Typography>
                     活動地點 : {props.place}
                 </Typography>
                 <Typography variant="body2" component="p">
@@ -113,6 +103,9 @@ const Content = function () {
 
     const classes = useStyles();
 
+    const events = EventService.listEvent();
+    console.log('events=', events)
+
     return (
         <div className={classes.root}>
             <Typography className={classes.title} variant="h2">
@@ -122,6 +115,16 @@ const Content = function () {
                 活動列表
             </Typography>
             <div className={classes.container}>
+                {
+                    events.map(evt => (
+                        <SimpleCard
+                            title={evt.title}
+                            time={evt.time}
+                            place={evt.place}
+                            describe={evt.describe}
+                        />
+                    ))
+                }
                 <SimpleCard
                     title="哈佛這樣教談判力：增強優勢，談出利多人和的好結果"
                     time="2021-01-30T05:22:31.00+08:00"

@@ -1,6 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import {TextField, Typography, Button} from '@material-ui/core';
+
+// react-router
+import {useHistory} from "react-router-dom";
+
+// services
+import EventService from "../../services/event";
 
 const useStyles = makeStyles(theme => ({
     container: {
@@ -48,10 +54,33 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
+const addEvent = (history, {title, time, place, describe}) => {
+
+    const event = {title, time, place, describe};
+    EventService.insertEvent(event);
+
+    history.push("/list");
+}
+
 const Content = function () {
 
     const classes = useStyles();
     const labels = ['主題(標題)', '時間', '地點', '描述'];
+    const names = ['title', 'time', 'place', 'describe'];
+    const history = useHistory();
+
+    // 宣告一個新的 state 變數，我們稱作為「count」。
+    const [state, setState] = useState({});
+
+    const handleChange = e => {
+        const {name, value} = e.target;
+        setState(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+
+        console.log('state=', state);
+    };
 
     return (
         <React.Fragment>
@@ -63,14 +92,16 @@ const Content = function () {
             </Typography>
             <form className={classes.container} noValidate autoComplete="off">
 
-                {labels.map(label => {
+                {labels.map((label, index) => {
 
                     return (
                         <div key={label} className={classes.container}>
                             <span className={classes.label}>{label}</span>
                             <TextField
                                 id="filled-basic"
+                                name={names[index]}
                                 className={classes.textField}
+                                onChange={handleChange}
                                 label={label}
                                 fullWidth
                                 margin="normal"
@@ -80,7 +111,11 @@ const Content = function () {
                     )
                 })}
 
-                <Button className={classes.button} fullWidth size="large" variant="contained" color="primary">
+                <Button className={classes.button} fullWidth size="large" variant="contained" color="primary"
+                        onClick={() => {
+
+                            addEvent(history, state);
+                        }}>
                     建立 "新的讀書會"
                 </Button>
             </form>

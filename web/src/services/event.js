@@ -9,28 +9,36 @@ Event {
  */
 
 import {setItem, getItem} from "../utils/localStorage";
-import uuid from "uuid";
+import {v4 as uuidv4} from 'uuid';
 
 const EVENT_KEY = 'events';
 
 const EventService = {
 
+    init: () => {
+
+        const events = getItem(EVENT_KEY);
+        if (!events) setItem(EVENT_KEY, '[]');
+    },
+
+    listEvent: () => JSON.parse(getItem(EVENT_KEY)),
+
     insertEvent: ({title, time, place, describe}) => {
 
-        const uuid = uuid.v4();
+        const uuid = uuidv4();
 
         const events = JSON.parse(getItem(EVENT_KEY));
-        const newEvents = events.push({uuid, title, time, place, describe});
-        setItem(JSON.stringify(newEvents));
+        events.push({uuid, title, time, place, describe});
+        setItem(EVENT_KEY, JSON.stringify(events));
 
-        return newEvents;
+        return events;
     },
 
     deleteEvent: (uuid) => {
 
         const events = JSON.parse(getItem(EVENT_KEY));
         const newEvents = events.filter(evt => evt.uuid !== uuid);
-        setItem(JSON.stringify(newEvents));
+        setItem(EVENT_KEY, JSON.stringify(newEvents));
 
         return newEvents;
     },
@@ -40,7 +48,7 @@ const EventService = {
         const updateEvt = {uuid, title, time, place, describe};
         const events = JSON.parse(getItem(EVENT_KEY));
         const newEvents = events.map(evt => (evt.uuid === uuid) ? updateEvt : evt);
-        setItem(JSON.stringify(newEvents));
+        setItem(EVENT_KEY, JSON.stringify(newEvents));
 
         return newEvents;
     },

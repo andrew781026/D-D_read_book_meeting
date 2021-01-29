@@ -5,8 +5,12 @@ import {BrowserRouter} from 'react-router-dom';
 import AppContext from './routes/AppContext';
 import routes from './routes/routesConfig';
 
+// services
+import EventService from "./services/event";
+
 function App() {
 
+    EventService.init();
 
     return (
         <AppContext.Provider value={{routes}}>
