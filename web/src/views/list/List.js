@@ -1,7 +1,7 @@
 import TopNavBar from "../home/TopNavBar";
 import ListContent from "./ListContent";
 
-export default () => (
+const List = () => (
     <div className="App">
         <header>
             <TopNavBar/>
@@ -11,3 +11,5 @@ export default () => (
         </main>
     </div>
 );
+
+export default List;

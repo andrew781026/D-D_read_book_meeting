@@ -67,13 +67,6 @@ const useSimpleCardStyles = makeStyles({
 function SimpleCard(props) {
     const classes = useSimpleCardStyles();
 
-    const formatTime = time => {
-
-        const dateTime = new Date(time);
-
-        return `${dateTime.getFullYear()}年${dateTime.getMonth() + 1}月${dateTime.getDate()}日 ${dateTime.getHours()}時${dateTime.getMinutes()}分`
-    };
-
     return (
         <Card className={classes.root}>
             <CardContent>
@@ -92,7 +85,7 @@ function SimpleCard(props) {
             </CardContent>
             <CardActions>
                 <Button size="small">
-                    <a href="https://www.books.com.tw/products/0010590581" target="_blank">查看 🛵</a>
+                    <a href="https://www.books.com.tw/products/0010590581" target="_blank" rel="noreferrer">查看 🛵</a>
                 </Button>
             </CardActions>
         </Card>

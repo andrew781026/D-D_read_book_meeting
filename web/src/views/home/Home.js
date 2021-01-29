@@ -1,7 +1,7 @@
 import TopNavBar from "./TopNavBar";
 import Content from "./Content";
 
-export default () => (
+const Home = () => (
     <div className="App">
         <header>
             <TopNavBar/>
@@ -11,3 +11,5 @@ export default () => (
         </main>
     </div>
 );
+
+export default Home;
