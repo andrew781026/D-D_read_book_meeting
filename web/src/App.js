@@ -6,9 +6,11 @@ import AppContext from './routes/AppContext';
 import routes from './routes/routesConfig';
 
 function App() {
+
+
     return (
         <AppContext.Provider value={{routes}}>
-            <BrowserRouter>
+            <BrowserRouter basename="/D-D_read_book_meeting" >
                 <Layout/>
             </BrowserRouter>
         </AppContext.Provider>
