@@ -39,3 +39,7 @@ set PORT=3006 && set PUBLIC_URL=http://localhost:3006/D-D_read_book_meeting/&& r
 ### 利用 .env 檔案設定參數
 
 官方文件 : https://create-react-app.dev/docs/adding-custom-environment-variables/#adding-development-environment-variables-in-env
+
+### Material-UI 建議的最小化 import 之方式
+
+- [minimizing-bundle-size](https://material-ui.com/zh/guides/minimizing-bundle-size/#option-2)
