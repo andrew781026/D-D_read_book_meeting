@@ -5,6 +5,10 @@
 ## 基本知識
 
 - [trigger](https://docs.github.com/cn/actions/reference/events-that-trigger-workflows) - 觸發 Action 執行 Job 的時機
+    - push
+    - pull_request
+    - workflow_dispatch : 自行在 github-action 頁面上 , 手動執行
+    - repository_dispatch : webhook for github-action
 - [job](https://docs.github.com/cn/actions/learn-github-actions/migrating-from-gitlab-cicd-to-github-actions#jobs) - 觸發後 , 需要執行的工作
 
 [![](https://docs.github.com/assets/images/help/images/overview-actions-design.png)](https://docs.github.com/cn/actions/learn-github-actions/introduction-to-github-actions)
