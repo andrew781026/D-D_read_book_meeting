@@ -26,6 +26,14 @@
 npm run start 
 ```
 
+使用 `npm run api:run` 讓你利用 /json-server/db.json 資料在 http://localhost:3003 上啟動一個 API server
+
+```shell script
+npm run api:run 
+```
+
+[![json-server](https://i.imgur.com/P7d0Olk.png)](http://localhost:3003)
+
 > 測試
 
 之後可能會加入 Jest 當作測試工具
