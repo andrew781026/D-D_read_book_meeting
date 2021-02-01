@@ -1,1 +1,52 @@
-{}
+{
+  "events": [
+    {
+      "question": {
+        "question": "問題",
+        "answer": "回答 - 當作加入此 '讀書會' 的密碼"
+      },
+      "status": "狀態 (發起 . 組建中. 進行中. 已結束)",
+      "type": "類型 (商業經營 / 投資理財 / 藝術設計 / 生活體驗...)",
+      "city": "地區 (台北 / 高雄)",
+      "member_limit": "預定人數 ( ex: 3 - 10 人 )",
+      "frequency": "頻率 - (未定 / 單次活動 / 每週一次 ...)",
+      "time": "時間 ( 讀書會 - 區間時間 )",
+      "comment": "備註 ( 頻率 / 時間 / 人數 )",
+      "title": "標題",
+      "content": "內文 ( about ) - 要存 ckEditor 的資料",
+      "create_at": "建立時間",
+      "update_at": "最後修改時間",
+      "img_url": "圖片 URL - 可用 cloudinary",
+      "tags": [
+        "firebase",
+        "TypeScript"
+      ],
+      "admins": [
+        {
+          "user_id": "S017",
+          "user_name": "阿低",
+          "avatar_url": "頭像 URL",
+          "description": "自我描述 - 要存 ckEditor 的資料",
+          "interest": "興趣書單 / 目標 - ?? 目前不確定 "
+        },
+        {
+          "user_id": "S034",
+          "user_name": "至七",
+          "avatar_url": "頭像 URL"
+        }
+      ],
+      "members": [
+        {
+          "user_id": "S021",
+          "user_name": "管長",
+          "avatar_url": "頭像 URL"
+        },
+        {
+          "user_id": "S007",
+          "user_name": "九妹",
+          "avatar_url": "頭像 URL"
+        }
+      ]
+    }
+  ]
+}

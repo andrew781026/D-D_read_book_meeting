@@ -10,6 +10,7 @@
 - [react-live](https://www.npmjs.com/package/react-live) - 方便 React 客製元件 Demo 的工具  
 - [material-UI](https://material-ui.com/zh/getting-started/installation/) - 符合 google 設計規範的 UI 框架 
 - [formik](https://formik.org/docs/overview) - facebook 推薦的表單管理框架
+- [json-server](https://www.npmjs.com/package/json-server) - 利用 db.json 做出的 mock REST server
 
 ### 前置安裝
 
