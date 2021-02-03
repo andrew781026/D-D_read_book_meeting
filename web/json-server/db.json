@@ -5,46 +5,56 @@
         "question": "問題",
         "answer": "回答 - 當作加入此 '讀書會' 的密碼"
       },
-      "status": "狀態 (發起 . 組建中. 進行中. 已結束)",
-      "type": "類型 (商業經營 / 投資理財 / 藝術設計 / 生活體驗...)",
-      "city": "地區 (台北 / 高雄)",
+      "status": {
+        "id": 5,
+        "name": "狀態 (發起 . 組建中. 進行中. 已結束)",
+        "label": "ended"
+      },
+      "type": {
+        "id": 11,
+        "name": "類型 (商業經營 / 投資理財 / 藝術設計 / 生活體驗...)",
+        "label": "art"
+      },
+      "city": "地區 (台北 / 高雄) - 可能先接公開的資料",
       "member_limit": "預定人數 ( ex: 3 - 10 人 )",
       "frequency": "頻率 - (未定 / 單次活動 / 每週一次 ...)",
       "time": "時間 ( 讀書會 - 區間時間 )",
       "comment": "備註 ( 頻率 / 時間 / 人數 )",
       "title": "標題",
-      "content": "內文 ( about ) - 要存 ckEditor 的資料",
-      "create_at": "建立時間",
+      "content": "內文 ( about ) - ( 格式 : markdown 格式 )",
+      "create_at": "建立時間 ( 格式 : 毫秒的 Timestamp / 2021-01-22T01:20:17.024+08:00 / 2021-01-22T01:20:17.024Z )",
       "update_at": "最後修改時間",
-      "img_url": "圖片 URL - 可用 cloudinary",
+      "img_url": "圖片 URL - 可用 cloudinary : https://res.cloudinary.com/andrew781026/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1586022982/background/button-bg_xusgay.jpg",
       "tags": [
         "firebase",
         "TypeScript"
       ],
-      "admins": [
+      "members": [
         {
           "user_id": "S017",
           "user_name": "阿低",
           "avatar_url": "頭像 URL",
-          "description": "自我描述 - 要存 ckEditor 的資料",
-          "interest": "興趣書單 / 目標 - ?? 目前不確定 "
+          "description": "自我描述 - ( 格式 : markdown 格式 )",
+          "interest": "興趣書單 / 目標 - 有 '書庫' 的 issue , 可能要跟設計師討論 ",
+          "level": "admin"
         },
         {
           "user_id": "S034",
           "user_name": "至七",
-          "avatar_url": "頭像 URL"
-        }
-      ],
-      "members": [
+          "avatar_url": "頭像 URL",
+          "level": "admin"
+        },
         {
           "user_id": "S021",
           "user_name": "管長",
-          "avatar_url": "頭像 URL"
+          "avatar_url": "頭像 URL",
+          "level": "common"
         },
         {
           "user_id": "S007",
           "user_name": "九妹",
-          "avatar_url": "頭像 URL"
+          "avatar_url": "頭像 URL",
+          "level": "common"
         }
       ]
     }
