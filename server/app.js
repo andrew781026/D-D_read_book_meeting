@@ -4,6 +4,41 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+
+const knex = require('./database/connection');
+const { Model } = require('objection');
+const { Category } = require('./models/category');
+
+
+// Bind all Models to the knex instance. You only
+// need to do this once before you use any of
+// your model classes.
+Model.knex(knex);
+
+async function main() {
+  // Delete all persons from the db.
+  await Category.query().delete();
+
+  // Insert one row to the database.
+  await Category.query().insert({
+    name: 'Jennifer',
+  });
+
+  // Read all rows from the db.
+  const people = await Category.query();
+  console.log(people);
+}
+
+main()
+  .then(() => knex.destroy())
+  .catch((err) => {
+    console.error(err);
+    return knex.destroy();
+  });
+
+
+
+
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
 const basicAuth = require('express-basic-auth');
