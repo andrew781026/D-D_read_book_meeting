@@ -12,6 +12,11 @@
 - [formik](https://formik.org/docs/overview) - facebook 推薦的表單管理框架
 - [json-server](https://www.npmjs.com/package/json-server) - 利用 db.json 做出的 mock REST server
 
+### 可能使用的技術
+
+- [react-markdown-editor-lite](https://github.com/HarryChen0506/react-markdown-editor-lite) - react 的 markdown 編輯器套件
+- [react-big-calendar](https://github.com/jquense/react-big-calendar) - react 的日曆套件
+
 ### 前置安裝
 
 下方為需要先安裝的一些程式
