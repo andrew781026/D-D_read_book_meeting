@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3.2"
 
 networks:
   backend:
@@ -7,7 +7,7 @@ networks:
 services:
   app:
     image: node:15.6.0
-    command: sh -c "npm install && npm run start"
+    command: sh -c "npm install && npm run dev"
     restart: always
     ports:
       - 3000:3000
