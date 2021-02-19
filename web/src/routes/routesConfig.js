@@ -12,12 +12,16 @@ const routes = [
         component: React.lazy(() => import('../views/list/List'))
     },
     {
+        path: "/create",
+        component: React.lazy(() => import('../views/create/Create'))
+    },
+    {
         path: "/loading",
         component: React.lazy(() => import('../views/loading/Loading'))
     },
     {
         path: "*",
-        component: lazyImport(import('../views/home/Home'), 1000)
+        component: lazyImport(import('../views/home/Home'), 1000) // 控制最小載入時間
     },
 ]
 
