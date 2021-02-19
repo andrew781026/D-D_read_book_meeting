@@ -1,14 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .card {
     display: flex;
     padding: 30px;
-    margin: 20px;
+    margin: 10px 30px 30px 30px;
     border-radius: 5px;
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+    min-width: calc(100% - 60px);
 }
 
 .content {
     display: flex;
     flex-direction: column;
+    flex: 1;
 }
 
 .pb_10 {
