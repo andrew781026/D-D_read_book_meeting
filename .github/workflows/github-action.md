@@ -21,6 +21,11 @@
 
 ![Web-CI 頁面執行](https://i.imgur.com/iPG1Wdo.png)
 
+## 參考資料
+
+- [Flutter Web — Github Actions-Github Pages](https://medium.com/flutter-community/flutter-web-github-actions-github-pages-dec8f308542a)
+- [GitHub Actions 入门教程 <阮一峰>](http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
+
 ---
 
 其他部分 , 可由各位工程師補充不足之處 ☺
