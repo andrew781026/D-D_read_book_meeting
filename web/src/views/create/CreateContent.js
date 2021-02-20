@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 
 // react-router
 import {useHistory} from "react-router-dom";
+import {TextField} from "@material-ui/core";
 
 const FirstStep = () => {
 
@@ -46,23 +47,20 @@ const FirstStep = () => {
 
 const SecondStep = () => {
 
-    const typeList = [
-        '商業經營',
-        '投資理財',
-        '藝術設計',
-        '生活體驗',
-        '社會文學',
-        '心理勵志',
-        '語言學習',
-        '資訊科技',
-        '考試衝刺',
-        '組隊競賽',
-    ];
-
-    const Block = ({label,placeholder})=> (
-        <div style={{display:'flex'}}>
-            <p style={{margin:'10px'}}>{label}</p>
-            <input type="text" placeholder={placeholder} />
+    const Block = ({label, placeholder,width}) => (
+        <div className={Styles.cell} style={{width}}>
+            <span className={Styles.label}>{label}</span>
+            <TextField
+                onChange={_ => _}
+                placeholder={placeholder}
+                className={Styles.textField}
+                inputProps={{
+                    style:{paddingTop:'17px'}
+                }}
+                fullWidth
+                margin="normal"
+                variant="filled"
+            />
         </div>
     )
 
@@ -70,14 +68,13 @@ const SecondStep = () => {
         <div className={Styles.container}>
             <h1>填入資訊讓你的成員參考！</h1>
             <div className={Styles.form}>
-                <Block label="時間" placeholder="未定/上午/中午/下午/晚上"/>
-                <Block label="聚會頻率" placeholder="未定/單次活動/每週一次/..."/>
-                <Block label="地區" placeholder="線上/台北/新北..."/>
-                <Block label="預定人數" placeholder=""/>
+                <Block width="50%" label="時間" placeholder="未定/上午/中午/下午/晚上"/>
+                <Block width="50%" label="聚會頻率" placeholder="未定/單次活動/每週一次/..."/>
+                <Block width="50%" label="地區" placeholder="線上/台北/新北..."/>
+                <Block width="50%" label="預定人數" placeholder=""/>
+                <Block width="100%" label="簡介" placeholder=""/>
+                <Block width="100%" label="標籤" placeholder="輸入最核心的三個標籤 ex.行銷"/>
             </div>
-            <Block label="簡介" placeholder=""/>
-            <Block label="標籤" placeholder=""/>
-            <p>輸入最核心的三個標籤 ex.行銷  </p>
         </div>
     )
 }
@@ -86,13 +83,15 @@ const ThirdStep = () => {
 
     return (
         <div className={Styles.container}>
-            <h1>標題:魔球投資學</h1>
-            <h1>類型:商業經營</h1>
-            <h1>時間:上午</h1>
-            <h1>地區:新北</h1>
-            <h1>聚會頻率:每週一次</h1>
-            <h1>預定人數:3</h1>
-            <h1>標籤:股票 . 基金 </h1>
+            <div className={Styles.showInfo}>
+                <h1>標題:魔球投資學</h1>
+                <h1>類型:商業經營</h1>
+                <h1>時間:上午</h1>
+                <h1>地區:新北</h1>
+                <h1>聚會頻率:每週一次</h1>
+                <h1>預定人數:3</h1>
+                <h1>標籤:股票 . 基金 </h1>
+            </div>
         </div>
     )
 }
@@ -114,7 +113,7 @@ const Content = () => {
 
     const stepContent = activeStep => {
 
-        console.log(activeStep);
+        // console.log(activeStep);
 
         if (activeStep === 0) return <FirstStep/>
         else if (activeStep === 1) return <SecondStep/>

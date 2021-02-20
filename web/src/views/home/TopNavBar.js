@@ -93,7 +93,7 @@ export default function PrimarySearchAppBar() {
             onClose={handleMenuClose}
         >
             <MenuItem onClick={() => history.push("/list")}>活動列表</MenuItem>
-            <MenuItem onClick={() => history.push("/add")}>新增活動</MenuItem>
+            <MenuItem onClick={() => history.push("/create")}>新增活動</MenuItem>
         </Menu>
     );
 

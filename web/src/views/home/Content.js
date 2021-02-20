@@ -98,7 +98,6 @@ const Content = function () {
                         <div key={label} className={classes.container}>
                             <span className={classes.label}>{label}</span>
                             <TextField
-                                id="filled-basic"
                                 name={names[index]}
                                 className={classes.textField}
                                 onChange={handleChange}
