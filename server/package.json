@@ -1,5 +1,5 @@
 {
-  "name": "ktor-api",
+  "name": "book-club",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -13,11 +13,9 @@
     "express": "~4.16.1",
     "express-basic-auth": "^1.2.0",
     "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
-    "mariadb": "^2.5.2",
+    "knex": "^0.21.17",
     "morgan": "~1.9.1",
-    "mysql-db-seed": "0.0.4",
-    "sequelize": "^6.4.0",
+    "objection": "^2.2.14",
     "swagger-jsdoc": "^6.0.1",
     "swagger-ui-express": "^4.1.6"
   },
