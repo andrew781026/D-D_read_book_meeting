@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89BEF80E25E3BDE100F6D23D /* 上傳.png in Resources */ = {isa = PBXBuildFile; fileRef = 89BEF80D25E3BDE100F6D23D /* 上傳.png */; };
 		B1EB088025B730D4006D4750 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB087F25B730D4006D4750 /* AppDelegate.swift */; };
 		B1EB088225B730D4006D4750 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB088125B730D4006D4750 /* SceneDelegate.swift */; };
 		B1EB088425B730D4006D4750 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB088325B730D4006D4750 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		89BEF80D25E3BDE100F6D23D /* 上傳.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "上傳.png"; sourceTree = "<group>"; };
 		B1EB087C25B730D4006D4750 /* Study Group App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Study Group App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EB087F25B730D4006D4750 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1EB088125B730D4006D4750 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89BEF80825E3AF7800F6D23D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				89BEF80C25E3BDE100F6D23D /* icon */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		89BEF80925E3AF7F00F6D23D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B1EB088325B730D4006D4750 /* ViewController.swift */,
+				B1EB087F25B730D4006D4750 /* AppDelegate.swift */,
+				B1EB088125B730D4006D4750 /* SceneDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		89BEF80A25E3AF8600F6D23D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		89BEF80C25E3BDE100F6D23D /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				89BEF80D25E3BDE100F6D23D /* 上傳.png */,
+			);
+			path = icon;
+			sourceTree = "<group>";
+		};
 		B1EB087325B730D4006D4750 = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +91,9 @@
 		B1EB087E25B730D4006D4750 /* Study Group App */ = {
 			isa = PBXGroup;
 			children = (
-				B1EB087F25B730D4006D4750 /* AppDelegate.swift */,
-				B1EB088125B730D4006D4750 /* SceneDelegate.swift */,
-				B1EB088325B730D4006D4750 /* ViewController.swift */,
+				89BEF80A25E3AF8600F6D23D /* Model */,
+				89BEF80925E3AF7F00F6D23D /* Controller */,
+				89BEF80825E3AF7800F6D23D /* View */,
 				B1EB088525B730D4006D4750 /* Main.storyboard */,
 				B1EB088825B730D5006D4750 /* Assets.xcassets */,
 				B1EB088A25B730D5006D4750 /* LaunchScreen.storyboard */,
@@ -94,7 +129,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Tiffany Yang";
 				TargetAttributes = {
 					B1EB087B25B730D4006D4750 = {
@@ -127,6 +162,7 @@
 			files = (
 				B1EB088C25B730D5006D4750 /* LaunchScreen.storyboard in Resources */,
 				B1EB088925B730D5006D4750 /* Assets.xcassets in Resources */,
+				89BEF80E25E3BDE100F6D23D /* 上傳.png in Resources */,
 				B1EB088725B730D4006D4750 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,6 +228,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -252,6 +289,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
