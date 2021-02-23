@@ -1,9 +1,12 @@
-import Styles from "./CreateContent.module.css";
-import Stepper from '@material-ui/core/Stepper';
-import Step from "@material-ui/core/Step";
-import StepLabel from "@material-ui/core/StepLabel";
-import React from "react";
+import React, {useState} from "react";
+import {Step, Stepper, StepLabel} from "@material-ui/core";
+import {ToggleButton} from "@material-ui/lab";
 import Button from "@material-ui/core/Button";
+import {v4 as uuidv4} from 'uuid';
+import TextInput from "../../components/TextInput";
+
+// styling
+import Styles from "./CreateContent.module.css";
 
 // react-router
 import {useHistory} from "react-router-dom";
@@ -11,18 +14,28 @@ import {TextField} from "@material-ui/core";
 
 const FirstStep = () => {
 
+    const createType = (label) => ({uuid: uuidv4(), label, selected: false})
+
     const typeList = [
-        '商業經營',
-        '投資理財',
-        '藝術設計',
-        '生活體驗',
-        '社會文學',
-        '心理勵志',
-        '語言學習',
-        '資訊科技',
-        '考試衝刺',
-        '組隊競賽',
+        createType('商業經營'),
+        createType('投資理財'),
+        createType('藝術設計'),
+        createType('生活體驗'),
+        createType('社會文學'),
+        createType('心理勵志'),
+        createType('語言學習'),
+        createType('資訊科技'),
+        createType('考試衝刺'),
+        createType('組隊競賽'),
     ];
+
+    const [types, setTypes] = useState(typeList);
+
+    const setSelected = type => e => {
+
+        const newTypes = [...types].map(item => (item.uuid === type.uuid) ? {...item, selected: !item.selected} : item);
+        setTypes(newTypes);
+    }
 
     return (
         <div className={Styles.container}>
@@ -32,10 +45,15 @@ const FirstStep = () => {
             <p>請選擇類別</p>
             <div className={Styles.types}>
                 {
-                    typeList.map((type, index) => (
-                        <div key={index}>
-                            {type}
-                        </div>
+                    types.map((type) => (
+                        <ToggleButton
+                            key={type.uuid}
+                            value="check"
+                            selected={type.selected}
+                            onChange={setSelected(type)}
+                        >
+                            {type.label}
+                        </ToggleButton>
                     ))
                 }
             </div>
@@ -47,19 +65,12 @@ const FirstStep = () => {
 
 const SecondStep = () => {
 
-    const Block = ({label, placeholder,width}) => (
+    const Block = ({label, placeholder, width}) => (
         <div className={Styles.cell} style={{width}}>
             <span className={Styles.label}>{label}</span>
-            <TextField
+            <TextInput
                 onChange={_ => _}
                 placeholder={placeholder}
-                className={Styles.textField}
-                inputProps={{
-                    style:{paddingTop:'17px'}
-                }}
-                fullWidth
-                margin="normal"
-                variant="filled"
             />
         </div>
     )
