@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// @ts-ignore
+import { Provider } from 'react-redux';
 import App from './App';
-import { ThemeProvider } from '@material-ui/styles';
+import {ThemeProvider} from '@material-ui/styles';
 import reportWebVitals from './reportWebVitals';
+import createStore from './redux/@createStore';
 
 // styling
 import './index.css';
 import theme from "./style/theme";
 
 ReactDOM.render(
-    <ThemeProvider theme={theme}>
-        <App/>
-    </ThemeProvider>,
+    <Provider store={createStore()}>
+        <ThemeProvider theme={theme}>
+            <App/>
+        </ThemeProvider>
+    </Provider>,
     document.getElementById('root')
 );
 

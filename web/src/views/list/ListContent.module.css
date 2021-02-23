@@ -24,6 +24,10 @@
     padding-bottom: 10px;
 }
 
+.mb_10 {
+    margin-bottom: 10px;
+}
+
 .flex_1 {
     flex: 1;
 }
@@ -56,4 +60,18 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+
+.three_line_truncate {
+
+    /**Major Properties**/
+    overflow: hidden;
+    max-height: 8em;
+    -webkit-box-orient: vertical;
+    display: block;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
 }

@@ -5,12 +5,58 @@ import Button from "@material-ui/core/Button";
 import {v4 as uuidv4} from 'uuid';
 import TextInput from "../../components/TextInput";
 
+// redux
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import ReduxEvent from "../../redux/event/actionReducer";
+
+// forms
+import {Controller, useController, useForm} from "react-hook-form";
+
 // styling
 import Styles from "./CreateContent.module.css";
 
 // react-router
 import {useHistory} from "react-router-dom";
 import {TextField} from "@material-ui/core";
+
+const mapStateToProps = state => ({
+    maskData: ReduxEvent.Selector.getMaskData(state),
+});
+
+const mapDispatchToProps = (dispatch) => {
+    const actions = {
+        setMaskData: ReduxEvent.ActionCreator.setMaskData,
+    };
+
+    return {
+        actions: bindActionCreators(actions, dispatch),
+        dispatch,
+    }
+};
+
+function Input({control, name}) {
+
+    const {
+        field: {ref, ...inputProps},
+        meta: {invalid, isTouched, isDirty},
+    } = useController({
+        name,
+        control,
+        rules: {required: true, maxLength: 20},
+        defaultValue: "",
+    });
+
+    return (
+        <TextInput
+            {...inputProps}
+            inputRef={ref}
+            name="title"
+            style={{width: '940px', maxWidth: 'calc(100% - 40px)'}}
+            placeholder='請輸入標題'
+        />
+    )
+}
 
 const FirstStep = () => {
 
@@ -31,17 +77,80 @@ const FirstStep = () => {
 
     const [types, setTypes] = useState(typeList);
 
+    /*
+        useForm() >>>
+        --------------------------------------
+        clearErrors: ƒ clearErrors(name)
+        control: {shouldUnregister: true, isFormDirty: ƒ, updateWatchedValue: ƒ, updateFormState: ƒ, removeFieldEventListener: ƒ, …}
+        errors: {}
+        formState: Proxy {isDirty: false, isValidating: false, dirtyFields: {…}, isSubmitted: false, submitCount: 0, …}
+        getValues: ƒ getValues(payload)
+        handleSubmit: (onValid, onInvalid) => {…}
+        register: ƒ register(refOrRegisterOptions, options)
+        reset: (values, omitResetState = {}) => {…}
+        setError: ƒ setError(name, error)
+        setValue: ƒ setValue(name, value, config)
+        trigger: async name => {…}
+        unregister: ƒ unregister(name)
+        watch: ƒ watch(fieldNames, defaultValue)
+     */
+
+    const form = useForm();
+
+    const {
+        clearErrors,
+        setError,
+        control,
+        errors,
+        formState,
+        handleSubmit,
+        getValues,
+
+    } = form;
+
     const setSelected = type => e => {
 
         const newTypes = [...types].map(item => (item.uuid === type.uuid) ? {...item, selected: !item.selected} : item);
         setTypes(newTypes);
     }
 
+    console.log('getValues()=', getValues())
+    console.log('form=', form)
+    console.log('errors=', errors)
+
+    /*
+    setError("TextField", {
+        "type": "required",
+        "message": ""
+    });
+
+     */
+
     return (
         <div className={Styles.container}>
             <h1>這次想要成立什麼讀書會呢？</h1>
             <p>標題</p>
-            <input type="text"/>
+            <Controller rules={{pattern: /[A-Za-z]{3}/, required: true, minLength: 4, maxLength: 6}}
+                        as={TextField} name="TextField"
+                        control={control} defaultValue=""/>
+            <Controller
+                control={control}
+                rules={{required: true, minLength: 4}}
+                name="test"
+                render={(
+                    {onChange, onBlur, value, name, ref},
+                    {invalid, isTouched, isDirty}
+                ) => (
+                    <TextInput
+                        onBlur={onBlur}
+                        onChange={(e) => onChange(e.target.value) }
+                        inputRef={ref}
+                        style={{width: '940px', maxWidth: 'calc(100% - 40px)'}}
+                        placeholder='請輸入標題'
+                    />
+                )}
+            />
+            <Input control={control} name="title"/>
             <p>請選擇類別</p>
             <div className={Styles.types}>
                 {
@@ -124,8 +233,6 @@ const Content = () => {
 
     const stepContent = activeStep => {
 
-        // console.log(activeStep);
-
         if (activeStep === 0) return <FirstStep/>
         else if (activeStep === 1) return <SecondStep/>
         else if (activeStep === 2) return <ThirdStep/>
@@ -133,7 +240,7 @@ const Content = () => {
     };
 
     return (
-        <>
+        <div className={Styles.root}>
             <Stepper activeStep={activeStep} alternativeLabel>
                 {steps.map((label) => (
                     <Step key={label}>
@@ -153,7 +260,7 @@ const Content = () => {
                     {activeStep === steps.length - 1 ? '完成' : '下一步'}
                 </Button>
             </div>
-        </>
+        </div>
     )
 }
 

@@ -71,9 +71,6 @@ const useStyles = makeStyles(theme => ({
     root: {
         overflowY: 'auto',
         maxHeight: 'calc(100vh - 64px)',
-        [theme.breakpoints.down('xs')]: {
-            maxHeight: 'calc(100vh - 56px)',
-        },
     },
     container: {
         display: 'flex',
@@ -134,8 +131,8 @@ function NewCard(props) {
                     <Typography variant="h5" className={Styles.pb_10}>
                         {props.title}
                     </Typography>
-                    <Typography className={Styles.pb_10}>
-                        {props.content}
+                    <Typography className={`${Styles.mb_10} ${Styles.three_line_truncate}`}>
+                            {props.content}
                     </Typography>
                 </div>
                 <div className={Styles.cardAction}>

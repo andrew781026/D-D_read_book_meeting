@@ -16,6 +16,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 const useStyles = makeStyles((theme) => ({
     grow: {
         flexGrow: 1,
+        minHeight: '64px',
     },
     menuButton: {
         marginRight: theme.spacing(2),
@@ -106,8 +107,8 @@ export default function PrimarySearchAppBar() {
                     </Typography>
                     <div className={classes.grow}/>
                     <div className={classes.sectionDesktop}>
-                        <p style={{marginLeft:'10px',marginRight:'10px',}}>招募版</p>
-                        <p style={{marginLeft:'10px',marginRight:'10px',}}>我的讀書會</p>
+                        <p style={{marginLeft: '10px', marginRight: '10px',}}>招募版</p>
+                        <p style={{marginLeft: '10px', marginRight: '10px',}}>我的讀書會</p>
                         <IconButton
                             onClick={handleProfileMenuOpen}
                             color="inherit"
