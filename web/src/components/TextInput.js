@@ -1,8 +1,9 @@
 import React from "react";
 import {TextField} from "@material-ui/core";
 
-const TextInput = props => (
+const TextInput = React.forwardRef((props, ref) => (
     <TextField
+        ref={ref}
         fullWidth
         margin="normal"
         variant="filled"
@@ -11,6 +12,6 @@ const TextInput = props => (
         }}
         {...props}
     />
-)
+))
 
 export default TextInput;

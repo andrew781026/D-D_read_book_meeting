@@ -1,62 +1,19 @@
 import React, {useState} from "react";
-import {Step, Stepper, StepLabel} from "@material-ui/core";
+import {Step, Stepper, StepLabel, Button} from "@material-ui/core";
 import {ToggleButton} from "@material-ui/lab";
-import Button from "@material-ui/core/Button";
 import {v4 as uuidv4} from 'uuid';
+
+// custom input
 import TextInput from "../../components/TextInput";
 
-// redux
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import ReduxEvent from "../../redux/event/actionReducer";
-
 // forms
-import {Controller, useController, useForm} from "react-hook-form";
+import {Controller, useForm} from "react-hook-form";
 
 // styling
 import Styles from "./CreateContent.module.css";
 
 // react-router
 import {useHistory} from "react-router-dom";
-import {TextField} from "@material-ui/core";
-
-const mapStateToProps = state => ({
-    maskData: ReduxEvent.Selector.getMaskData(state),
-});
-
-const mapDispatchToProps = (dispatch) => {
-    const actions = {
-        setMaskData: ReduxEvent.ActionCreator.setMaskData,
-    };
-
-    return {
-        actions: bindActionCreators(actions, dispatch),
-        dispatch,
-    }
-};
-
-function Input({control, name}) {
-
-    const {
-        field: {ref, ...inputProps},
-        meta: {invalid, isTouched, isDirty},
-    } = useController({
-        name,
-        control,
-        rules: {required: true, maxLength: 20},
-        defaultValue: "",
-    });
-
-    return (
-        <TextInput
-            {...inputProps}
-            inputRef={ref}
-            name="title"
-            style={{width: '940px', maxWidth: 'calc(100% - 40px)'}}
-            placeholder='請輸入標題'
-        />
-    )
-}
 
 const FirstStep = () => {
 
@@ -95,16 +52,19 @@ const FirstStep = () => {
         watch: ƒ watch(fieldNames, defaultValue)
      */
 
-    const form = useForm();
+    // useForm API : https://react-hook-form.com/api#useForm
+    const form = useForm({
+        mode: 'onChange',  // Validation will trigger on the change event
+    });
 
     const {
-        clearErrors,
-        setError,
+        // clearErrors,
+        // setError,
         control,
-        errors,
-        formState,
-        handleSubmit,
-        getValues,
+        // errors,
+        // formState,
+        // handleSubmit,
+        // getValues,
 
     } = form;
 
@@ -114,43 +74,18 @@ const FirstStep = () => {
         setTypes(newTypes);
     }
 
-    console.log('getValues()=', getValues())
-    console.log('form=', form)
-    console.log('errors=', errors)
-
-    /*
-    setError("TextField", {
-        "type": "required",
-        "message": ""
-    });
-
-     */
+    // console.log('getValues()=', getValues())
+    // console.log('form=', form)
+    // console.log('errors=', errors)
 
     return (
         <div className={Styles.container}>
-            <h1>這次想要成立什麼讀書會呢？</h1>
+            <h1 style={{margin:'16px 0'}}>這次想要成立什麼讀書會呢？</h1>
             <p>標題</p>
-            <Controller rules={{pattern: /[A-Za-z]{3}/, required: true, minLength: 4, maxLength: 6}}
-                        as={TextField} name="TextField"
-                        control={control} defaultValue=""/>
-            <Controller
-                control={control}
-                rules={{required: true, minLength: 4}}
-                name="test"
-                render={(
-                    {onChange, onBlur, value, name, ref},
-                    {invalid, isTouched, isDirty}
-                ) => (
-                    <TextInput
-                        onBlur={onBlur}
-                        onChange={(e) => onChange(e.target.value) }
-                        inputRef={ref}
+            <Controller rules={{required: true, maxLength: 20}} control={control} defaultValue=""
                         style={{width: '940px', maxWidth: 'calc(100% - 40px)'}}
                         placeholder='請輸入標題'
-                    />
-                )}
-            />
-            <Input control={control} name="title"/>
+                        as={TextInput} name="title"/>
             <p>請選擇類別</p>
             <div className={Styles.types}>
                 {

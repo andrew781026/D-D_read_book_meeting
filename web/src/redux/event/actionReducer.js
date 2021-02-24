@@ -1,4 +1,4 @@
-import {getReduxDispatch} from "../@createStore";
+// import {getReduxDispatch} from "../@createStore";
 
 const ActionType = {
     SET_MASK_DATA: '[MASK] SET_MASK_DATA',
@@ -41,7 +41,7 @@ const AsyncMethods = {
 
     async getMaskData() {
 
-        const dispatch = getReduxDispatch();
+        // const dispatch = getReduxDispatch();
 
         return {};
     },

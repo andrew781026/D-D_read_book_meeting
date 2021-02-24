@@ -7,10 +7,12 @@ let store = undefined;
 
 // grab current state
 // const state = store.getState();
+/*eslint-disable*/
 export const getReduxState = () => store.getState();
 
 // grab current dispatch
 // const dispatch = store.dispatch;
+/*eslint-disable*/
 export const getReduxDispatch = () => store.dispatch;
 
 export default () => {
