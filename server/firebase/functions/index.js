@@ -4,7 +4,7 @@ const express = require("express");
 const PORT = 3000;
 const app = express();
 
-
+var randomId = require('random-id'); //建立隨機的會員ID
 var admin = require("firebase-admin");
 
 var serviceAccount = require("./secret/fir-project-85d2e-firebase-adminsdk-gddm9-b450a5bc32.json");
@@ -23,8 +23,9 @@ app.get('/', (req, res, next) => {
 
 app.get('/process_update', function(req, res) {
 
-    var data = {}
-    data[String(new Date())] = {
+    var data = {};
+    var user_id = randomId(30, 'aA0');
+    data[user_id] = {
         "first_name": req.query.first_name,
         "last_name": req.query.last_name
     };
@@ -32,7 +33,7 @@ app.get('/process_update', function(req, res) {
     database.ref('/base_name').update(data);
 
     console.log("upload success");
-    res.end("upload to Firebase success");
+    res.end("upload to Firebase Database success!\nthe ID is " + user_id);
 });
 
 
