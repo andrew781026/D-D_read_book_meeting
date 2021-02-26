@@ -31,7 +31,22 @@ For now :
 Tutorial : https://www.youtube.com/watch?v=Qnw2bO3ljZs  
 2. Use Firebase Realtime Database as the database   
 documents : https://firebase.google.com/docs/database  
-  
+
+上傳至Cloud Function  
+
+1. 登入帳號(bookclub.dd.side.project@gmail.com)
+```
+firebase login
+```
+
+2. 部屬檔案
+```
+firebase deploy
+```
+目前可以用的API  
+* 存取Firebase資料庫 : https://us-central1-fir-project-85d2e.cloudfunctions.net/app/data_get
+* 新增資料：https://us-central1-fir-project-85d2e.cloudfunctions.net/app/process_update?first_name=A&last_name=B
+
 ### Use Docker Develop
 
 ```
