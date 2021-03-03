@@ -1,6 +1,10 @@
 
 目前可以使用的API
 ------------
+託管服務：Firebase cloud functions
+```
+https://us-central1-fir-project-85d2e.cloudfunctions.net/
+```
 
 ## 成員相關
 * 設定成員基本資訊
