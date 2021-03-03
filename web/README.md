@@ -4,6 +4,10 @@
 
 為求簡單 , 我們使用 create-react-app 建構基礎框架並且不 eject
 
+### 設計稿
+
+[![](https://i.imgur.com/8Z07IKA.png)](https://www.figma.com/file/IbjW4woFRr8vxI6bU17Rp6/WEB?node-id=267%3A0)
+
 ### 技術清單 :
 
 - [react](https://zh-hant.reactjs.org/) - 前端三大框架之一

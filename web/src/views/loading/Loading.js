@@ -1,6 +1,6 @@
 import styles from './Loading.module.css'; // Import css modules stylesheet as styles
 
-const arr = new Array(10).fill('').map((item, index) => index);
+const arr = new Array(9).fill('').map((item, index) => index);
 
 const Loader = () => (
     <section className={styles.section}>

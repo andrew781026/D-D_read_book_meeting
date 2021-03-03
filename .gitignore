@@ -40,3 +40,7 @@ error-*
 
 # test
 /test/screenshots/*.png
+
+
+# web ts ignore
+react-app-env.d.ts
