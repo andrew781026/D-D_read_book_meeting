@@ -31,10 +31,10 @@ https://us-central1-fir-project-85d2e.cloudfunctions.net/app
 ```
 ["商業經營", "投資理財", "藝術設計", "生活體驗", "社會文學", "心理勵志", "語言學習", "資訊科技", "考試衝刺", "組隊競賽"]
 ```
-* /interests?mode=quary                      //索引全部的類別
-* /interests?mode=add&name=投資理財          //新增類別
-* /interests?mode=delete&name=投資理財       //刪除指定類別
-* /interests?mode=recover                   //初始化回最原始的類別(共10種)
+* 索引全部的類別: /interests?mode=quary                      
+* 新增類別： /interests?mode=add&name=投資理財          
+* 刪除指定類別： /interests?mode=delete&name=投資理財       
+* 初始化回最原始的類別(共10種)：/interests?mode=recover                   
   
 # To do
 - [x] build basic menber data form
