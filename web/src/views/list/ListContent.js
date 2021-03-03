@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Button, Typography, AppBar, Tab, Tabs} from "@material-ui/core";
+import {Button, Typography, Tab, Tabs, Paper} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import EventService from "../../services/event";
 import Styles from "./ListContent.module.css";
@@ -68,9 +68,9 @@ const events = [
  */
 
 const useStyles = makeStyles(theme => ({
-    root: {
+    list: {
         overflowY: 'auto',
-        maxHeight: 'calc(100vh - 64px)',
+        maxHeight: 'calc(100vh - 64px - 48px)',
     },
     container: {
         display: 'flex',
@@ -132,7 +132,7 @@ function NewCard(props) {
                         {props.title}
                     </Typography>
                     <Typography className={`${Styles.mb_10} ${Styles.three_line_truncate}`}>
-                            {props.content}
+                        {props.content}
                     </Typography>
                 </div>
                 <div className={Styles.cardAction}>
@@ -313,20 +313,22 @@ const Content = function () {
     const changeType = (event, newValue) => setShowType(newValue);
 
     return (
-        <div className={classes.root}>
-            <AppBar position="static">
+        <>
+            <Paper square>
                 <Tabs value={showType} onChange={changeType}>
                     <Tab label="進行中"/>
                     <Tab label="已結束"/>
                 </Tabs>
-            </AppBar>
-            <TabPanel value={showType} index={0}>
-                <RunningList prepare={activities.prepare} running={activities.running}/>
-            </TabPanel>
-            <TabPanel value={showType} index={1}>
-                <EndedList ended={activities.ended}/>
-            </TabPanel>
-        </div>
+            </Paper>
+            <div className={classes.list}>
+                <TabPanel value={showType} index={0}>
+                    <RunningList prepare={activities.prepare} running={activities.running}/>
+                </TabPanel>
+                <TabPanel value={showType} index={1}>
+                    <EndedList ended={activities.ended}/>
+                </TabPanel>
+            </div>
+        </>
     )
 }
 

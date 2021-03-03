@@ -21,7 +21,6 @@
     display: grid;
     grid-template-columns: repeat(5, minmax(auto, 180px));
     grid-gap: 10px;
-    margin: 0 20px 0 20px;
 }
 
 .types > div {
