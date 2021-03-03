@@ -39,5 +39,5 @@ https://us-central1-fir-project-85d2e.cloudfunctions.net/
 # To do
 - [x] build basic menber data form
 - [x] build basic menber group form
-- [] create the flag on the organizer
-- [] build the API to add / delete people to a specific group  
+- [ ] create the flag on the organizer
+- [ ] build the API to add / delete people to a specific group  
