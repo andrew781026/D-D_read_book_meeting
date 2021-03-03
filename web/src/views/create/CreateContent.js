@@ -192,54 +192,6 @@ const ThirdStep = ({values}) => {
     )
 }
 
-// 註記 useForm 的相關事件
-const getForm = () => {
-
-    /*
-        useForm() >>>
-        --------------------------------------
-        clearErrors: ƒ clearErrors(name)
-        control: {shouldUnregister: true, isFormDirty: ƒ, updateWatchedValue: ƒ, updateFormState: ƒ, removeFieldEventListener: ƒ, …}
-        errors: {}
-        formState: Proxy {isDirty: false, isValidating: false, dirtyFields: {…}, isSubmitted: false, submitCount: 0, …}
-        getValues: ƒ getValues(payload)
-        handleSubmit: (onValid, onInvalid) => {…}
-        register: ƒ register(refOrRegisterOptions, options)
-        reset: (values, omitResetState = {}) => {…}
-        setError: ƒ setError(name, error)
-        setValue: ƒ setValue(name, value, config)
-        trigger: async name => {…}
-        unregister: ƒ unregister(name)
-        watch: ƒ watch(fieldNames, defaultValue)
-     */
-
-    // useForm API : https://react-hook-form.com/api#useForm
-    /*
-    const form = useForm({
-        mode: 'onChange',  // Validation will trigger on the change event
-    });
-
-
-    const {
-
-        control,
-        // clearErrors,
-        // setError,
-        // errors,
-        // formState,
-        // handleSubmit,
-        // getValues,
-
-    } = form;
-
-    // console.log('getValues()=', getValues())
-    // console.log('form=', form)
-    // console.log('errors=', errors)
-
-    return form
-     */
-}
-
 const Content = () => {
 
     const history = useHistory();
