@@ -3,7 +3,7 @@
 ------------
 託管服務：Firebase cloud functions
 ```
-https://us-central1-fir-project-85d2e.cloudfunctions.net/
+https://us-central1-fir-project-85d2e.cloudfunctions.net/app
 ```
 
 ## 成員相關
