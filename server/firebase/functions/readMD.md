@@ -2,7 +2,6 @@
 目前可以使用的API
 ------------
 
-
 ## 成員相關
 * 設定成員基本資訊
 ```
@@ -33,4 +32,8 @@
 * /interests?mode=delete&name=投資理財       //刪除指定類別
 * /interests?mode=recover                   //初始化回最原始的類別(共10種)
   
-  
+# To do
+- [x] build basic menber data form
+- [x] build basic menber group form
+- [] create the flag on the organizer
+- [] build the API to add / delete people to a specific group  
