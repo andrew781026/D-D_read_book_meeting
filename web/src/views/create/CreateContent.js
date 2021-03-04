@@ -14,6 +14,7 @@ import Styles from "./CreateContent.module.css";
 
 // react-router
 import {useHistory} from "react-router-dom";
+import EventService from "../../services/event";
 
 const FirstStep = React.forwardRef((props, ref) => {
 
@@ -220,8 +221,13 @@ const Content = () => {
 
     const handleNext = () => {
 
-        if (activeStep === steps.length - 1) history.push("/list");
-        else {
+        if (activeStep === steps.length - 1) {
+
+            // save formData to events
+            EventService.insertEvent(formData);
+
+            history.push("/list");
+        } else {
             setActiveStep((prevActiveStep) => prevActiveStep + 1);
             handleFormData(activeStep);
         }
