@@ -38,54 +38,27 @@ app.use(docuRouter);
 
 // 設定能被選擇的類別
 app.get('/interests', (req, res, next) => {
+    console.log("request command undefined");
+    res.end("currently we suppose these command to do on 'interests':\n * add\n * quary \n * delete \n * recover")
+});
+
+// 設定能被選擇的類別
+app.post('/interests/add', (req, res, next) => {
     new Promise(
         function(resolve) {
             database.ref('/interests').on('value', e => { resolve(e.val()) });
         }).then(function(final_data) {
-
-        if (req.query.mode === "add") {
-
-            var interest_array = {};
-            for (var i = 0; i < final_data.length; i++) {
-                if (final_data[i].length !== 0 || final_data[i].length !== null) {
-                    interest_array[i] = final_data[i];
-                }
+        var interest_array = {};
+        for (var i = 0; i < final_data.length; i++) {
+            if (final_data[i].length !== 0 || final_data[i].length !== null) {
+                interest_array[i] = final_data[i];
             }
-
-            interest_array[final_data.length] = req.query.name;
-
-            database.ref('/interests').set(interest_array);
-            res.end(String(req.query.name) + "add to list success")
-
-        } else if (req.query.mode === "quary") {
-            database.ref('/interests').on('value', e => {
-                res.json({ "data": final_data })
-            });
-        } else if (req.query.mode === "delete") {
-
-            var temp = take(final_data.indexOf(req.query.name), final_data)
-
-            var interest_array = {};
-            for (var i = 0; i < temp.length; i++) {
-                interest_array[i] = temp[i]
-            }
-
-            database.ref('/interests').set(interest_array);
-            res.end(String(req.query.name) + " delete form list success")
-            console.log(String(req.query.name) + " delete form list success")
-
-        } else if (req.query.mode === "recover") {
-            var interest_array = {};
-            var temp = ["商業經營", "投資理財", "藝術設計", "生活體驗", "社會文學", "心理勵志", "語言學習", "資訊科技", "考試衝刺", "組隊競賽"];
-            for (var i = 0; i < temp.length; i++) {
-                interest_array[i] = temp[i]
-            }
-            database.ref('/interests').set(interest_array);
-            res.end("list recover success")
-        } else {
-            console.log("request command undefined");
-            res.end("currently we suppose these command to do on 'interests':\n * add\n * quary \n * delete \n * recover")
         }
+
+        interest_array[final_data.length] = req.query.name;
+        database.ref('/interests').set(interest_array);
+        res.end(String(req.query.name) + "add to list success")
+
     }).catch(function(error) {
         res.end(String(error))
         console.log(index + " request error");
@@ -93,18 +66,68 @@ app.get('/interests', (req, res, next) => {
 
 });
 
+app.delete('/interests/delete', (req, res, next) => {
+    new Promise(
+        function(resolve) {
+            database.ref('/interests').on('value', e => { resolve(e.val()) });
+        }).then(function(final_data) {
+        var temp = take(final_data.indexOf(req.query.name), final_data)
+
+        var interest_array = {};
+        for (var i = 0; i < temp.length; i++) {
+            interest_array[i] = temp[i]
+        }
+
+        database.ref('/interests').set(interest_array);
+        res.end(String(req.query.name) + " delete form list success")
+        console.log(String(req.query.name) + " delete form list success")
+
+    }).catch(function(error) {
+        res.end(String(error))
+        console.log(index + " request error");
+    });
+
+});
+
+app.get('/interests/quary', (req, res, next) => {
+    new Promise(
+        function(resolve) {
+            database.ref('/interests').on('value', e => { resolve(e.val()) });
+        }).then(function(final_data) {
+
+        res.json(final_data)
+
+    }).catch(function(error) {
+        res.end(String(error))
+        console.log(index + " request error");
+    });
+});
+
+
+app.put('/interests/recover', (req, res, next) => {
+
+    var interest_array = {};
+    var temp = ["商業經營", "投資理財", "藝術設計", "生活體驗", "社會文學", "心理勵志", "語言學習", "資訊科技", "考試衝刺", "組隊競賽"];
+    for (var i = 0; i < temp.length; i++) {
+        interest_array[i] = temp[i]
+    }
+    database.ref('/interests').set(interest_array);
+    res.end("list recover success")
+
+});
+
 //成員設定
-app.get('/menber_setup', function(req, res) {
+app.post('/menber/setup', function(req, res) {
 
     var data = {};
     var user_id = randomId(30, 'aA0');
     data[user_id] = {
         "email": req.query.email,
         "password": req.query.password,
-        "interests": req.query.names, //陣列形式
+        "interests": req.query.interests, //陣列形式
         "neckname": req.query.neckname,
         "occupation": req.query.occupation,
-        "intorduction": req.query.intorduction
+        "introduction": req.query.introduction
     };
 
     database.ref('/user_info').update(data);
@@ -112,7 +135,7 @@ app.get('/menber_setup', function(req, res) {
     res.end("upload to Firebase Database success!\nthe user_id is " + user_id);
 });
 
-app.get('/menber_quary', function(req, res) {
+app.get('/menber/quary', function(req, res) {
 
     new Promise(
         function(resolve) {
@@ -136,7 +159,7 @@ app.get('/menber_quary', function(req, res) {
 });
 
 //社團設定
-app.get('/group_setup', function(req, res) {
+app.post('/group_setup', function(req, res) {
 
     var data = {};
     var group_id = randomId(30, 'aA0');
@@ -184,7 +207,7 @@ app.get('/group_quary', function(req, res) {
 });
 
 //尚未解決
-app.get('/group_add_user', function(req, res) {
+app.get('/group/add', function(req, res) {
 
     new Promise(
         function(resolve) {

@@ -11,13 +11,13 @@
     "produces": [
         "application/json"
     ],
-    "host": "us-central1-fir-project-85d2e.cloudfunctions.net",
+    "host": "us-central1-fir-project-85d2e.cloudfunctions.net/app",
     "basePath": "/app",
     "paths": {
-        "/menber_setup": {
+        "/menber/setup": {
             "post": {
                 "tags": ["成員相關"],
-                "summary": "Add a new menber to the dataset",
+                "summary": "新增成員並賦予會員ID",
                 "parameters": [{
                         "name": "email",
                         "in": "path",
@@ -49,7 +49,7 @@
                         "type": "string"
                     },
                     {
-                        "name": "intorduction",
+                        "name": "introduction",
                         "in": "path",
                         "required": true,
                         "type": "string"
@@ -65,12 +65,30 @@
                 }
             }
         },
-        "/menber_quary": {
+        "/menber/quary": {
             "get": {
                 "tags": ["成員相關"],
-                "summary": "quary a known User by ID",
+                "summary": "依據會員ID查詢對應資訊",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Menber"
+                        }
+                    },
+                    "400": {
+                        "description": "data{user_id}.{parameter} is not defined"
+                    }
+                }
+            }
+        },
+        "/interests/add": {
+            "post": {
+                "tags": ["讀書會類別"],
+                "summary": "新增讀書會類別",
                 "parameters": [{
-                    "name": "user_id",
+                    "name": "name",
+                    "description": "欲增加的新類別名稱",
                     "in": "path",
                     "required": true,
                     "type": "string"
@@ -88,54 +106,13 @@
                 }
             }
         },
-        "/interests": {
-            "get": {
-                "tags": ["讀書會類別"],
-                "summary": "quary a known User by ID",
-                "parameters": [{
-                    "name": "user_id",
-                    "in": "path",
-                    "required": true,
-                    "type": "string"
-                }],
-                "responses": {
-                    "200": {
-                        "description": "successful operation",
-                        "schema": {
-                            "$ref": "#/definitions/Menber"
-                        }
-                    },
-                    "400": {
-                        "description": "data{user_id}.{parameter} is not defined"
-                    }
-                }
-            },
-            "put": {
-                "tags": ["讀書會類別"],
-                "summary": "quary a known User by ID",
-                "parameters": [{
-                    "name": "user_id",
-                    "in": "path",
-                    "required": true,
-                    "type": "string"
-                }],
-                "responses": {
-                    "200": {
-                        "description": "successful operation",
-                        "schema": {
-                            "$ref": "#/definitions/Category"
-                        }
-                    },
-                    "400": {
-                        "description": "data{user_id}.{parameter} is not defined"
-                    }
-                }
-            },
+        "/interests/delete": {
             "delete": {
                 "tags": ["讀書會類別"],
-                "summary": "quary a known User by ID",
+                "summary": "刪除特定的讀書會類別",
                 "parameters": [{
-                    "name": "user_id",
+                    "name": "name",
+                    "description": "欲刪除的新類別名稱",
                     "in": "path",
                     "required": true,
                     "type": "string"
@@ -152,8 +129,40 @@
                     }
                 }
             }
-
-
+        },
+        "/interests/recover": {
+            "put": {
+                "tags": ["讀書會類別"],
+                "summary": "恢復讀書會類別到原先的十種",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Category"
+                        }
+                    },
+                    "400": {
+                        "description": "data{user_id}.{parameter} is not defined"
+                    }
+                }
+            }
+        },
+        "/interests/quary": {
+            "get": {
+                "tags": ["讀書會類別"],
+                "summary": "檢索現有的讀書會類別",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Category"
+                        }
+                    },
+                    "400": {
+                        "description": "data{user_id}.{parameter} is not defined"
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -166,7 +175,7 @@
                 "interests": {
                     "type": "string"
                 },
-                "intorduction": {
+                "introduction": {
                     "type": "string"
                 },
                 "neckname": {
