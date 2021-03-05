@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {Button, Typography, Tab, Tabs, Paper} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import EventService from "../../services/event";
+import Image from "../../components/Image";
 import Styles from "./ListContent.module.css";
 
 /*
@@ -145,7 +146,7 @@ function NewCard(props) {
                     </Button>
                 </div>
             </div>
-            <img className={Styles.img} src={props.img_url} alt="照片-書/主題相關的照片"/>
+            <Image className={Styles.img} src={props.img_url} alt="照片-書/主題相關的照片" fallbackSrc='https://fakeimg.pl/300x400'/>
         </div>
     );
 }
@@ -205,6 +206,7 @@ const Content = function () {
 
     const activities = {
         prepare: [
+            ...events,
             {
                 uuid: '02982f96-6afa-414f-8e00-2d3d4bc27448',
                 type: '類型',
