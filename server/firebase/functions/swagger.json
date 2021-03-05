@@ -1,0 +1,199 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "D_D bookclub API",
+        "description": "建立與擷取資料的說明"
+    },
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "host": "us-central1-fir-project-85d2e.cloudfunctions.net",
+    "basePath": "/app",
+    "paths": {
+        "/menber_setup": {
+            "post": {
+                "tags": ["成員相關"],
+                "summary": "Add a new menber to the dataset",
+                "parameters": [{
+                        "name": "email",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "interests",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "neckname",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "occupation",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "intorduction",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid status value"
+                    }
+                }
+            }
+        },
+        "/menber_quary": {
+            "get": {
+                "tags": ["成員相關"],
+                "summary": "quary a known User by ID",
+                "parameters": [{
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Menber"
+                        }
+                    },
+                    "400": {
+                        "description": "data{user_id}.{parameter} is not defined"
+                    }
+                }
+            }
+        },
+        "/interests": {
+            "get": {
+                "tags": ["讀書會類別"],
+                "summary": "quary a known User by ID",
+                "parameters": [{
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Menber"
+                        }
+                    },
+                    "400": {
+                        "description": "data{user_id}.{parameter} is not defined"
+                    }
+                }
+            },
+            "put": {
+                "tags": ["讀書會類別"],
+                "summary": "quary a known User by ID",
+                "parameters": [{
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Category"
+                        }
+                    },
+                    "400": {
+                        "description": "data{user_id}.{parameter} is not defined"
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["讀書會類別"],
+                "summary": "quary a known User by ID",
+                "parameters": [{
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Category"
+                        }
+                    },
+                    "400": {
+                        "description": "data{user_id}.{parameter} is not defined"
+                    }
+                }
+            }
+
+
+        }
+    },
+    "definitions": {
+        "Menber": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "interests": {
+                    "type": "string"
+                },
+                "intorduction": {
+                    "type": "string"
+                },
+                "neckname": {
+                    "type": "string"
+                },
+                "occupation": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            }
+        },
+        "Category": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "xml": {
+                "name": "Category"
+            }
+        }
+    }
+}

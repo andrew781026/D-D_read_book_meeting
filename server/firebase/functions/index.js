@@ -6,6 +6,8 @@ const app = express();
 
 var randomId = require('random-id'); //建立隨機的會員ID
 var admin = require("firebase-admin");
+const docuRouter = require('./swagger');
+
 
 var serviceAccount = require("./secret/fir-project-85d2e-firebase-adminsdk-gddm9-b450a5bc32.json");
 const { event } = require("firebase-functions/lib/providers/analytics");
@@ -31,6 +33,8 @@ function take(i, array) {
 app.get('/', (req, res, next) => {
     res.send('Welcome to Firebase functions with Node Express!')
 });
+
+app.use(docuRouter);
 
 // 設定能被選擇的類別
 app.get('/interests', (req, res, next) => {

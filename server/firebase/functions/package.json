@@ -21,7 +21,9 @@
         "random-id": "^1.0.4"
     },
     "devDependencies": {
-        "firebase-functions-test": "^0.2.0"
+        "firebase-functions-test": "^0.2.0",
+        "swagger-jsdoc": "^7.0.0-rc.4",
+        "swagger-ui-express": "^4.1.6"
     },
     "private": true
 }
