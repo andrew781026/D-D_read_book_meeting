@@ -39,7 +39,7 @@ app.use(docuRouter);
 // 設定能被選擇的類別
 app.get('/interests', (req, res, next) => {
     console.log("request command undefined");
-    res.end("currently we suppose these command to do on 'interests':\n * add\n * quary \n * delete \n * recover")
+    res.send("currently we suppose these command to do on 'interests':\n * add\n * quary \n * delete \n * recover")
 });
 
 // 設定能被選擇的類別
@@ -57,10 +57,10 @@ app.post('/interests/add', (req, res, next) => {
 
         interest_array[final_data.length] = req.query.name;
         database.ref('/interests').set(interest_array);
-        res.end(String(req.query.name) + "add to list success")
+        res.send(String(req.query.name) + "add to list success")
 
     }).catch(function(error) {
-        res.end(String(error))
+        res.send(String(error))
         console.log(index + " request error");
     });
 
@@ -79,11 +79,11 @@ app.delete('/interests/delete', (req, res, next) => {
         }
 
         database.ref('/interests').set(interest_array);
-        res.end(String(req.query.name) + " delete form list success")
+        res.send(String(req.query.name) + " delete form list success")
         console.log(String(req.query.name) + " delete form list success")
 
     }).catch(function(error) {
-        res.end(String(error))
+        res.send(String(error))
         console.log(index + " request error");
     });
 
@@ -98,7 +98,7 @@ app.get('/interests/quary', (req, res, next) => {
         res.json(final_data)
 
     }).catch(function(error) {
-        res.end(String(error))
+        res.send(String(error))
         console.log(index + " request error");
     });
 });
@@ -112,7 +112,7 @@ app.put('/interests/recover', (req, res, next) => {
         interest_array[i] = temp[i]
     }
     database.ref('/interests').set(interest_array);
-    res.end("list recover success")
+    res.send("list recover success")
 
 });
 
@@ -132,7 +132,7 @@ app.post('/menber/setup', function(req, res) {
 
     database.ref('/user_info').update(data);
     console.log(" user_id " + user_id + " upload success");
-    res.end("upload to Firebase Database success!\nthe user_id is " + user_id);
+    res.send("upload to Firebase Database success!\nthe user_id is " + user_id);
 });
 
 app.get('/menber/quary', function(req, res) {
@@ -147,12 +147,12 @@ app.get('/menber/quary', function(req, res) {
         if (Object.keys(final_data).legnth !== 0) {
             res.json(final_data)
         } else {
-            res.end()
+            res.send()
         }
         console.log("querry user id " + req.query.user_id + " success")
 
     }).catch(function(error) {
-        res.end("the user you request is not hound")
+        res.send("the user you request is not hound")
         console.log(req.query.user_id + " request error");
     });;
 
@@ -182,7 +182,7 @@ app.post('/group_setup', function(req, res) {
     database.ref('/Group_info').update(data);
 
     console.log("group setup success");
-    res.end("group setup success , the Group id is " + group_id);
+    res.send("group setup success , the Group id is " + group_id);
 });
 
 app.get('/group_quary', function(req, res) {
@@ -196,12 +196,12 @@ app.get('/group_quary', function(req, res) {
         if (Object.keys(final_data).legnth !== 0) {
             res.json(final_data)
         } else {
-            res.end("the group you request is not hound")
+            res.send("the group you request is not hound")
         }
         console.log("querry group " + req.query.group_id + " success")
 
     }).catch(function(error) {
-        res.end(String(error))
+        res.send(String(error))
         console.log("querry group " + req.query.group_id + " request error");
     });;
 });
@@ -228,7 +228,7 @@ app.get('/group/add', function(req, res) {
         }
 
     }).catch(function(error) {
-        res.end(String(error))
+        res.send(String(error))
         console.log("querry group_add_user " + req.query.group_id + " request error");
     });;
 
