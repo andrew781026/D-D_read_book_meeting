@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B143F5C225E4C87700CCA6BC /* PersonalInfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B143F5C125E4C87700CCA6BC /* PersonalInfoViewCell.swift */; };
-		B143F5C525E6208900CCA6BC /* MembersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B143F5C325E6208900CCA6BC /* MembersCollectionViewCell.swift */; };
-		B143F5C625E6208900CCA6BC /* MembersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B143F5C425E6208900CCA6BC /* MembersCollectionViewCell.xib */; };
 		B143F5C825E6261300CCA6BC /* GroupPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B143F5C725E6261300CCA6BC /* GroupPageController.swift */; };
 		B143F5CB25E76D6F00CCA6BC /* GroupsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B143F5CA25E76D6F00CCA6BC /* GroupsInfo.swift */; };
+		B19935A625F74BD00007ED4C /* GroupPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19935A425F74BD00007ED4C /* GroupPageCollectionViewCell.swift */; };
+		B19935A725F74BD00007ED4C /* MembersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B19935A525F74BD00007ED4C /* MembersCollectionViewCell.xib */; };
 		B1A7B5FD25F5C66200869629 /* LoginPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A7B5FC25F5C66200869629 /* LoginPageController.swift */; };
 		B1EB088025B730D4006D4750 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB087F25B730D4006D4750 /* AppDelegate.swift */; };
 		B1EB088225B730D4006D4750 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB088125B730D4006D4750 /* SceneDelegate.swift */; };
@@ -24,10 +24,10 @@
 
 /* Begin PBXFileReference section */
 		B143F5C125E4C87700CCA6BC /* PersonalInfoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewCell.swift; sourceTree = "<group>"; };
-		B143F5C325E6208900CCA6BC /* MembersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersCollectionViewCell.swift; sourceTree = "<group>"; };
-		B143F5C425E6208900CCA6BC /* MembersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembersCollectionViewCell.xib; sourceTree = "<group>"; };
 		B143F5C725E6261300CCA6BC /* GroupPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPageController.swift; sourceTree = "<group>"; };
 		B143F5CA25E76D6F00CCA6BC /* GroupsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsInfo.swift; sourceTree = "<group>"; };
+		B19935A425F74BD00007ED4C /* GroupPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPageCollectionViewCell.swift; sourceTree = "<group>"; };
+		B19935A525F74BD00007ED4C /* MembersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembersCollectionViewCell.xib; sourceTree = "<group>"; };
 		B1A7B5FC25F5C66200869629 /* LoginPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageController.swift; sourceTree = "<group>"; };
 		B1EB087C25B730D4006D4750 /* Study Group App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Study Group App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EB087F25B730D4006D4750 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,8 +56,9 @@
 			children = (
 				B1EB088325B730D4006D4750 /* SearchViewController.swift */,
 				B143F5C125E4C87700CCA6BC /* PersonalInfoViewCell.swift */,
-				B143F5C325E6208900CCA6BC /* MembersCollectionViewCell.swift */,
 				B143F5C725E6261300CCA6BC /* GroupPageController.swift */,
+				B19935A425F74BD00007ED4C /* GroupPageCollectionViewCell.swift */,
+				B19935A525F74BD00007ED4C /* MembersCollectionViewCell.xib */,
 				B1A7B5FC25F5C66200869629 /* LoginPageController.swift */,
 				B1F37B2925F5F8C000BF41C4 /* RegisterPageController.swift */,
 			);
@@ -68,7 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				B1EB088525B730D4006D4750 /* Main.storyboard */,
-				B143F5C425E6208900CCA6BC /* MembersCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,8 +170,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B143F5C625E6208900CCA6BC /* MembersCollectionViewCell.xib in Resources */,
 				B1EB088C25B730D5006D4750 /* LaunchScreen.storyboard in Resources */,
+				B19935A725F74BD00007ED4C /* MembersCollectionViewCell.xib in Resources */,
 				B1EB088925B730D5006D4750 /* Assets.xcassets in Resources */,
 				B1EB088725B730D4006D4750 /* Main.storyboard in Resources */,
 			);
@@ -189,10 +189,10 @@
 				B143F5CB25E76D6F00CCA6BC /* GroupsInfo.swift in Sources */,
 				B143F5C825E6261300CCA6BC /* GroupPageController.swift in Sources */,
 				B1EB088025B730D4006D4750 /* AppDelegate.swift in Sources */,
+				B19935A625F74BD00007ED4C /* GroupPageCollectionViewCell.swift in Sources */,
 				B1EB088225B730D4006D4750 /* SceneDelegate.swift in Sources */,
 				B1A7B5FD25F5C66200869629 /* LoginPageController.swift in Sources */,
 				B1F37B2A25F5F8C000BF41C4 /* RegisterPageController.swift in Sources */,
-				B143F5C525E6208900CCA6BC /* MembersCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,14 +1,14 @@
 //
-//  MembersCollectionViewCell.swift
+//  GroupPageCollectionViewCell.swift
 //  Study Group App
 //
-//  Created by Tiff Yang on 2021/2/24.
+//  Created by Tiff Yang on 2021/3/9.
 //  Copyright © 2021 Tiffany Yang. All rights reserved.
 //
 
 import UIKit
 
-class MembersCollectionViewCell: UICollectionViewCell {
+class GroupPageCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
