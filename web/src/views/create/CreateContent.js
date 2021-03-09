@@ -174,9 +174,22 @@ const SecondStep = React.forwardRef((props, ref) => {
     // useForm API : https://react-hook-form.com/api#useForm
     const form = useForm({
         mode: 'onChange',  // Validation will trigger on the change event
+        defaultValues: {
+            time: 'none',
+            frequency: 'none',
+            city: 'none',
+        }
     });
 
-    const {control, errors, getValues,} = form;
+
+    const {control, errors, getValues, trigger} = form;
+
+    React.useEffect(() => {
+
+        // immediate valid defaultValues , after render goes here
+        trigger();
+
+    }, []); // <-- empty array means 'run once'
 
     React.useImperativeHandle(ref, () => ({getValues,}));
 
@@ -185,6 +198,7 @@ const SecondStep = React.forwardRef((props, ref) => {
             <h1>填入資訊讓你的成員參考！</h1>
             <div className={Styles.form}>
                 <SelectBlock width="50%" label="時間" placeholder="時間"
+                             name="time"
                              defaultValue='none'
                              items={[
                                  {value: 'none', label: '未定'},
@@ -193,14 +207,12 @@ const SecondStep = React.forwardRef((props, ref) => {
                                  {value: 'afternoon', label: '下午'},
                                  {value: 'night', label: '晚上'},
                              ]}
-                             name="time"
                              control={control}
                              errors={errors}
-                             rules={
-                                 {
-                                     required: {value: true, message: '時間不能為 - 未定'}, // value must not be none
-                                 }}/>
+                             rules={{validate: {isNone: value => value === 'none' && '時間不能為 - 未定'},}}
+                />
                 <SelectBlock width="50%" label="聚會頻率" placeholder="頻率"
+                             name="frequency"
                              defaultValue='none'
                              items={[
                                  {value: 'none', label: '未定'},
@@ -212,15 +224,12 @@ const SecondStep = React.forwardRef((props, ref) => {
                                  {value: 'quarter', label: '每季一次'},
                                  {value: 'half-year', label: '每半年一次'},
                                  {value: 'year', label: '每年一次'},
-                             ]}
-                             name="frequency" control={control} errors={errors} rules={
-                    {
-                        required: {value: true, message: '頻率不能為 - 未定'},
-                    }}/>
-
-
+                             ]} control={control} errors={errors}
+                             rules={{validate: {isNone: value => value === 'none' && '頻率不能為 - 未定'},}}
+                />
                 <SelectBlock width="50%" label="地區"
-                             placeholder="縣市" name="city"
+                             name="city"
+                             placeholder="縣市"
                              defaultValue='none'
                              items={[
                                  {value: 'none', label: '未定'},
@@ -247,12 +256,9 @@ const SecondStep = React.forwardRef((props, ref) => {
                                  {value: '11', label: '雲林縣'},
                                  {value: '22', label: '連江縣'},
                              ]}
-                             control={control} errors={errors} rules={
-                    {
-                        validate: {
-                            isNone: value => value === 'none' && '縣市不能為 *未定*',
-                        },
-                    }}/>
+                             control={control} errors={errors}
+                             rules={{validate: {isNone: value => value === 'none' && '地區不能為 - 未定'},}}
+                />
                 <InputBlock width="50%" label="預定人數"
                             placeholder="" name="member_limit"
                             control={control} errors={errors} rules={
@@ -280,8 +286,6 @@ const SecondStep = React.forwardRef((props, ref) => {
 })
 
 const ThirdStep = ({values}) => {
-
-    console.log(values)
 
     return (
         <div className={Styles.container}>

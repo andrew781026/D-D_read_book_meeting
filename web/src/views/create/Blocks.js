@@ -18,7 +18,6 @@ export const InputBlock = ({label, placeholder, width, name, errors, rules, cont
 )
 
 export const SelectBlock = ({
-                                defaultValue,
                                 label,
                                 placeholder,
                                 width,
@@ -43,11 +42,10 @@ export const SelectBlock = ({
                         <InputLabel>{placeholder}</InputLabel>
                         <Select
                             label={placeholder}
-                            defaultValue={defaultValue}
                             value={value}
                             onChange={onChange}
                         >
-                            {items.map(item => <MenuItem value={item.value}>{item.label}</MenuItem>)}
+                            {items.map((item,index) => <MenuItem key={index} value={item.value}>{item.label}</MenuItem>)}
                         </Select>
                     </FormControl>
                 )}
