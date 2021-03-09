@@ -16,29 +16,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0LM-rt-Jgg">
-                                <rect key="frame" x="107" y="528" width="200" height="56"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0LM-rt-Jgg">
+                                <rect key="frame" x="52" y="527" width="311" height="56"/>
                                 <color key="backgroundColor" red="0.33724069600000001" green="0.35166245699999998" blue="0.78435647490000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                 <state key="normal" title="註冊">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Fm-JD-kT4">
-                                <rect key="frame" x="107" y="611" width="200" height="56"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Fm-JD-kT4">
+                                <rect key="frame" x="52" y="610" width="311" height="56"/>
                                 <color key="backgroundColor" red="0.33724069600000001" green="0.35166245699999998" blue="0.78435647490000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                 <state key="normal" title="登入">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jv3-Sw-ZSU">
-                                <rect key="frame" x="148" y="201" width="118" height="118"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jv3-Sw-ZSU">
+                                <rect key="frame" x="148" y="189" width="118" height="118"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="請先登入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbJ-O9-va5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="請先登入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbJ-O9-va5">
                                 <rect key="frame" x="138" y="401" width="138" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -46,19 +44,32 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Jv3-Sw-ZSU" firstAttribute="leading" secondItem="4Po-qp-yv3" secondAttribute="leading" constant="148" id="HWC-32-Nrz"/>
+                            <constraint firstItem="Jv3-Sw-ZSU" firstAttribute="top" secondItem="4Po-qp-yv3" secondAttribute="top" constant="101" id="HYG-yF-hLI"/>
                             <constraint firstItem="0Fm-JD-kT4" firstAttribute="top" secondItem="0LM-rt-Jgg" secondAttribute="bottom" constant="24" id="UYx-nY-xeg"/>
+                            <constraint firstItem="4Po-qp-yv3" firstAttribute="trailing" secondItem="0Fm-JD-kT4" secondAttribute="trailing" constant="276" id="Xut-mf-J4Q"/>
+                            <constraint firstItem="0LM-rt-Jgg" firstAttribute="top" secondItem="lbJ-O9-va5" secondAttribute="bottom" constant="85" id="YbC-8v-sTR"/>
+                            <constraint firstItem="lbJ-O9-va5" firstAttribute="top" secondItem="Jv3-Sw-ZSU" secondAttribute="bottom" constant="94" id="c8k-0X-REQ"/>
+                            <constraint firstItem="4Po-qp-yv3" firstAttribute="trailing" secondItem="lbJ-O9-va5" secondAttribute="trailing" constant="138" id="fPj-2n-YJL"/>
+                            <constraint firstItem="0Fm-JD-kT4" firstAttribute="leading" secondItem="4Po-qp-yv3" secondAttribute="leading" constant="107" id="gBw-rg-x2v"/>
+                            <constraint firstItem="0LM-rt-Jgg" firstAttribute="leading" secondItem="4Po-qp-yv3" secondAttribute="leading" constant="107" id="hgH-me-WXQ"/>
+                            <constraint firstItem="4Po-qp-yv3" firstAttribute="trailing" secondItem="0LM-rt-Jgg" secondAttribute="trailing" constant="276" id="mST-wx-4HK"/>
+                            <constraint firstItem="4Po-qp-yv3" firstAttribute="trailing" secondItem="Jv3-Sw-ZSU" secondAttribute="trailing" constant="148" id="t3S-zZ-qHZ"/>
+                            <constraint firstItem="lbJ-O9-va5" firstAttribute="leading" secondItem="4Po-qp-yv3" secondAttribute="leading" constant="138" id="x7F-sG-Ef2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Po-qp-yv3"/>
                     </view>
                     <navigationItem key="navigationItem" id="aQW-xS-vLR">
-                        <barButtonItem key="rightBarButtonItem" title="發起招募" style="plain" id="nvF-gk-1c7">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="nvF-gk-1c7">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KBb-WI-dnF">
                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="發起招募"/>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="BfC-vC-fq7" kind="show" id="yBQ-bS-CxM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sx1-xL-Upb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,7 +84,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sqe-Ch-zfR">
-                                <rect key="frame" x="107" y="527" width="200" height="56"/>
+                                <rect key="frame" x="52" y="527" width="311" height="56"/>
                                 <color key="backgroundColor" red="0.33724069600000001" green="0.35166245699999998" blue="0.78435647490000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                 <state key="normal" title="發起招募">
@@ -81,7 +92,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDH-Vq-hml">
-                                <rect key="frame" x="107" y="610" width="200" height="56"/>
+                                <rect key="frame" x="52" y="610" width="311" height="56"/>
                                 <color key="backgroundColor" red="0.33724069600000001" green="0.35166245699999998" blue="0.78435647490000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                 <state key="normal" title="搜尋讀書會">
@@ -451,7 +462,7 @@
                             </collectionView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w0T-mi-kSj">
                                 <rect key="frame" x="20" y="105" width="121" height="109"/>
-                                <color key="backgroundColor" red="0.96502226589999995" green="0.97225707770000003" blue="0.98823875189999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.77281272410000001" green="0.77618330719999995" blue="0.79216003420000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="頻率未定" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKw-s9-dZB">
                                 <rect key="frame" x="187" y="190" width="206" height="24"/>
