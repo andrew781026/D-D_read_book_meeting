@@ -8,6 +8,8 @@ var randomId = require('random-id'); //建立隨機的會員ID
 var admin = require("firebase-admin");
 const docuRouter = require('./swagger');
 
+var bodyParser = require('body-parser');
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 var serviceAccount = require("./secret/fir-project-85d2e-firebase-adminsdk-gddm9-b450a5bc32.json");
 const { event } = require("firebase-functions/lib/providers/analytics");
@@ -34,6 +36,7 @@ app.get('/', (req, res, next) => {
     res.send('Welcome to Firebase functions with Node Express!')
 });
 
+// API文件的部分
 app.use(docuRouter);
 
 // 設定能被選擇的類別
@@ -43,7 +46,7 @@ app.get('/interests', (req, res, next) => {
 });
 
 // 設定能被選擇的類別
-app.post('/interests/add', (req, res, next) => {
+app.post('/interests/add', urlencodedParser, (req, res, next) => {
     new Promise(
         function(resolve) {
             database.ref('/interests').on('value', e => { resolve(e.val()) });
@@ -55,9 +58,9 @@ app.post('/interests/add', (req, res, next) => {
             }
         }
 
-        interest_array[final_data.length] = req.query.name;
+        interest_array[final_data.length] = req.body.name;
         database.ref('/interests').set(interest_array);
-        res.send(String(req.query.name) + "add to list success")
+        res.send(String(req.body.name) + "add to list success")
 
     }).catch(function(error) {
         res.send(String(error))
@@ -117,17 +120,17 @@ app.put('/interests/recover', (req, res, next) => {
 });
 
 //成員設定
-app.post('/menber/setup', function(req, res) {
+app.post('/menber/setup', urlencodedParser, function(req, res) {
 
     var data = {};
     var user_id = randomId(30, 'aA0');
     data[user_id] = {
-        "email": req.query.email,
-        "password": req.query.password,
-        "interests": req.query.interests, //陣列形式
-        "neckname": req.query.neckname,
-        "occupation": req.query.occupation,
-        "introduction": req.query.introduction
+        "email": req.body.email,
+        "password": req.body.password,
+        "interests": req.body.interests, //陣列形式
+        "neckname": req.body.neckname,
+        "occupation": req.body.occupation,
+        "introduction": req.body.introduction
     };
 
     database.ref('/user_info').update(data);
@@ -159,24 +162,24 @@ app.get('/menber/quary', function(req, res) {
 });
 
 //社團設定
-app.post('/group_setup', function(req, res) {
+app.post('/group_setup', urlencodedParser, function(req, res) {
 
     var data = {};
     var group_id = randomId(30, 'aA0');
 
     data[group_id] = {
-        "type": req.query.type,
-        "name": req.query.name,
-        "location": req.query.location,
-        "time": req.query.time,
-        "frequency": req.query.frequency,
-        "organizer": req.query.organizer,
-        "co-organizer": req.query.co_organizer, //儲存共同創辦者的userid
-        "picture": req.query.picture,
-        "discription": req.query.discription,
-        "menbers": [req.query.organizer].concat(req.query.co_organizer.replace(/[\[|\]]/g, "").split(',')), //儲存userid
-        "flag": req.query.flag, //儲存標籤
-        "expect_num": req.query.expect_num,
+        "type": req.body.type,
+        "name": req.body.name,
+        "location": req.body.location,
+        "time": req.body.time,
+        "frequency": req.body.frequency,
+        "organizer": req.body.organizer,
+        "co-organizer": req.body.co_organizer, //儲存共同創辦者的userid
+        "picture": req.body.picture,
+        "discription": req.body.discription,
+        "menbers": [req.body.organizer].concat(req.body.co_organizer.replace(/[\[|\]]/g, "").split(',')), //儲存userid
+        "flag": req.body.flag, //儲存標籤
+        "expect_num": req.body.expect_num,
     };
 
     database.ref('/Group_info').update(data);
@@ -185,7 +188,7 @@ app.post('/group_setup', function(req, res) {
     res.send("group setup success , the Group id is " + group_id);
 });
 
-app.get('/group_quary', function(req, res) {
+app.get('/group/quary', function(req, res) {
 
     new Promise(
         function(resolve) {
@@ -235,6 +238,11 @@ app.get('/group/add', function(req, res) {
 
 });
 
+/* 
+app.get('*', function(req, res) {
+    res.send('404 not found');
+});
+*/
 
 app.listen(PORT, () => {
     console.log('Server is running on port', PORT)

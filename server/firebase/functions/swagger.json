@@ -70,6 +70,13 @@
             "get": {
                 "tags": ["成員相關"],
                 "summary": "依據會員ID查詢對應資訊",
+                "parameters": [{
+                    "name": "user_id",
+                    "description": "欲查詢的會員ID",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }],
                 "responses": {
                     "200": {
                         "description": "successful operation",
