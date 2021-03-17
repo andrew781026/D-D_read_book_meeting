@@ -1,20 +1,17 @@
 //
-//  ViewController.swift
+//  LoginPageController.swift
 //  Study Group App
 //
-//  Created by Tiff Yang on 2021/1/19.
+//  Created by Tiff Yang on 2021/3/8.
 //  Copyright © 2021 Tiffany Yang. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class LoginPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+       
+       
     }
-
-
 }
-
