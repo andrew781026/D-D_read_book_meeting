@@ -206,7 +206,7 @@ app.get('/group/quary', function(req, res) {
     }).catch(function(error) {
         res.send(String(error))
         console.log("querry group " + req.query.group_id + " request error");
-    });;
+    });
 });
 
 //尚未解決
@@ -233,16 +233,16 @@ app.get('/group/add', function(req, res) {
     }).catch(function(error) {
         res.send(String(error))
         console.log("querry group_add_user " + req.query.group_id + " request error");
-    });;
+    });
 
 
 });
 
-/* 
-app.get('*', function(req, res) {
-    res.send('404 not found');
+// 處理 404 page 部分 , 此區塊需要放在最後面 , 以免影響其他 app.get 的運作
+app.get('*', (req, res) => {
+    const fs = require("fs")
+    res.status(404).send(fs.readFileSync(`${__dirname}/pages/404.html`).toString());
 });
-*/
 
 app.listen(PORT, () => {
     console.log('Server is running on port', PORT)
