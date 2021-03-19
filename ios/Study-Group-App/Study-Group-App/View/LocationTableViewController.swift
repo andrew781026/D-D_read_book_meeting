@@ -7,33 +7,12 @@
 
 import UIKit
 
-class LocationTableViewController:
-    UITableViewController {
-    
-    class LocTableViewCell: UITableViewCell {
-        @IBOutlet  weak var location:UILabel!
-        
-        var index: Int?
-        var completionHandler:((Int) -> Void)?
-        
-        override func awakeFromNib() {
-            super.awakeFromNib()
-            // Initialization code
-        }
-        
-        override func setSelected(_ selected: Bool, animated: Bool) {
-            super.setSelected(selected, animated: animated)
-            // Configure the view for the selected state
-        }
-        
-        @IBAction func clickButton(_ sender:UIButton) {
-            if let index = index{
-                completionHandler?(index)
-            }
-        } 
-    }
-    
 
+class LocationTableViewController:UITableViewController {
+    
+    
+    var selectIndex = -1
+    // var location:String?
     var locationArray : [String] = [
         "臺北市",
         "新北市",
@@ -61,7 +40,7 @@ class LocationTableViewController:
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("3")
+ 
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -94,15 +73,27 @@ class LocationTableViewController:
     // Configure the cell...
     // 設定 cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LocationList", for: indexPath)
 
-        cell.textLabel?.text = locationArray[indexPath.row]
-        
-        print(cell)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "locationList", for: indexPath) as! LocTableViewCell
 
+       
+        
+        cell.locationButton.setTitle(locationArray[indexPath.row], for: .normal)
+        
+        cell.index = indexPath.row
+        // 實作func
+        cell.completionHandler = {
+            (index) in
+            self.selectIndex = index
+            
+            
+            self.performSegue(withIdentifier: "selectLocationFinish", sender: self)
+            
+        }
         return cell
     }
+    
+    
     
 
     /*
@@ -121,7 +112,7 @@ class LocationTableViewController:
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
@@ -140,14 +131,24 @@ class LocationTableViewController:
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
+        /*
+        let controller = segue.destination as! Create_Book_Club_2_ViewController
+        */
+        Create_Book_Club_2_ViewController.location = locationArray[selectIndex]
+        print(Create_Book_Club_2_ViewController.location!)
+        /*
+        if let row = tableView.indexPathForSelectedRow?.row {
+            controller.location = locationArray[row]
+            print(locationArray[row])
+         
+        }
+         */
+     
+    }
 }
