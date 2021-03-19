@@ -444,15 +444,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="155.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdh-0N-hOE">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="93.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="這次想要成立什麼讀書會呢？" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrn-SC-PrM">
-                                                <rect key="frame" x="0.0" y="31" width="374" height="62.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Group Nume" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aUQ-CX-DyN">
@@ -464,10 +458,8 @@
                                             </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="xrn-SC-PrM" firstAttribute="height" secondItem="G9G-Vq-G5I" secondAttribute="height" multiplier="0.4" id="D4v-Gy-89T"/>
                                             <constraint firstItem="aUQ-CX-DyN" firstAttribute="height" secondItem="G9G-Vq-G5I" secondAttribute="height" multiplier="0.4" id="JZh-AG-fpD"/>
                                             <constraint firstItem="Fdh-0N-hOE" firstAttribute="width" secondItem="G9G-Vq-G5I" secondAttribute="width" id="ufh-M8-vcr"/>
-                                            <constraint firstItem="xrn-SC-PrM" firstAttribute="width" secondItem="G9G-Vq-G5I" secondAttribute="width" id="v4S-2g-nhL"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="p9r-kX-K9e">

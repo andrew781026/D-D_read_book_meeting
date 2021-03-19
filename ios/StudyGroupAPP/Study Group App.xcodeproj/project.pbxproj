@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1184ED02602DFEC00627F72 /* Create_Book_Club_2_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1184ECA2602DFEC00627F72 /* Create_Book_Club_2_ViewController.swift */; };
+		B1184ED22602DFEC00627F72 /* TimesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1184ECC2602DFEC00627F72 /* TimesTableViewController.swift */; };
+		B1184ED32602DFEC00627F72 /* Create_Book_Club_1_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1184ECD2602DFEC00627F72 /* Create_Book_Club_1_ViewController.swift */; };
+		B1184ED42602DFEC00627F72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1184ECE2602DFEC00627F72 /* ViewController.swift */; };
+		B1184ED52602DFEC00627F72 /* Create_Book_Club_3_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1184ECF2602DFEC00627F72 /* Create_Book_Club_3_ViewController.swift */; };
+		B1184EDE2602E04700627F72 /* BookClubClassifyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1184ED72602E04700627F72 /* BookClubClassifyTableViewCell.swift */; };
+		B1184EDF2602E04700627F72 /* LocTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1184ED82602E04700627F72 /* LocTableViewCell.swift */; };
+		B1184EE02602E04700627F72 /* -.png in Resources */ = {isa = PBXBuildFile; fileRef = B1184ED92602E04700627F72 /* -.png */; };
+		B1184EE12602E04700627F72 /* LocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1184EDA2602E04700627F72 /* LocationTableViewController.swift */; };
+		B1184EE22602E04700627F72 /* TimesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1184EDB2602E04700627F72 /* TimesTableViewCell.swift */; };
+		B1184EE32602E04700627F72 /* +.png in Resources */ = {isa = PBXBuildFile; fileRef = B1184EDC2602E04700627F72 /* +.png */; };
+		B1184EE42602E04700627F72 /* 上傳.png in Resources */ = {isa = PBXBuildFile; fileRef = B1184EDD2602E04700627F72 /* 上傳.png */; };
+		B1184EE82602E06500627F72 /* LuMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1184EE62602E06500627F72 /* LuMain.storyboard */; };
 		B143F5C225E4C87700CCA6BC /* PersonalInfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B143F5C125E4C87700CCA6BC /* PersonalInfoViewCell.swift */; };
 		B143F5C825E6261300CCA6BC /* GroupPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B143F5C725E6261300CCA6BC /* GroupPageController.swift */; };
 		B143F5CB25E76D6F00CCA6BC /* GroupsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B143F5CA25E76D6F00CCA6BC /* GroupsInfo.swift */; };
@@ -23,6 +36,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B1184ECA2602DFEC00627F72 /* Create_Book_Club_2_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Create_Book_Club_2_ViewController.swift; path = "../../../Study-Group-App/Study-Group-App/Controller/Create_Book_Club_2_ViewController.swift"; sourceTree = "<group>"; };
+		B1184ECC2602DFEC00627F72 /* TimesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimesTableViewController.swift; path = "../../../Study-Group-App/Study-Group-App/Controller/TimesTableViewController.swift"; sourceTree = "<group>"; };
+		B1184ECD2602DFEC00627F72 /* Create_Book_Club_1_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Create_Book_Club_1_ViewController.swift; path = "../../../Study-Group-App/Study-Group-App/Controller/Create_Book_Club_1_ViewController.swift"; sourceTree = "<group>"; };
+		B1184ECE2602DFEC00627F72 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "../../../Study-Group-App/Study-Group-App/Controller/ViewController.swift"; sourceTree = "<group>"; };
+		B1184ECF2602DFEC00627F72 /* Create_Book_Club_3_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Create_Book_Club_3_ViewController.swift; path = "../../../Study-Group-App/Study-Group-App/Controller/Create_Book_Club_3_ViewController.swift"; sourceTree = "<group>"; };
+		B1184ED72602E04700627F72 /* BookClubClassifyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookClubClassifyTableViewCell.swift; path = "../../../Study-Group-App/Study-Group-App/View/BookClubClassifyTableViewCell.swift"; sourceTree = "<group>"; };
+		B1184ED82602E04700627F72 /* LocTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocTableViewCell.swift; path = "../../../Study-Group-App/Study-Group-App/View/LocTableViewCell.swift"; sourceTree = "<group>"; };
+		B1184ED92602E04700627F72 /* -.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "-.png"; path = "../../../Study-Group-App/Study-Group-App/View/-.png"; sourceTree = "<group>"; };
+		B1184EDA2602E04700627F72 /* LocationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationTableViewController.swift; path = "../../../Study-Group-App/Study-Group-App/View/LocationTableViewController.swift"; sourceTree = "<group>"; };
+		B1184EDB2602E04700627F72 /* TimesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimesTableViewCell.swift; path = "../../../Study-Group-App/Study-Group-App/View/TimesTableViewCell.swift"; sourceTree = "<group>"; };
+		B1184EDC2602E04700627F72 /* +.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "+.png"; path = "../../../Study-Group-App/Study-Group-App/View/+.png"; sourceTree = "<group>"; };
+		B1184EDD2602E04700627F72 /* 上傳.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "上傳.png"; path = "../../../Study-Group-App/Study-Group-App/View/上傳.png"; sourceTree = "<group>"; };
+		B1184EE72602E06500627F72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../Study-Group-App/Study-Group-App/Base.lproj/LuMain.storyboard"; sourceTree = "<group>"; };
 		B143F5C125E4C87700CCA6BC /* PersonalInfoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewCell.swift; sourceTree = "<group>"; };
 		B143F5C725E6261300CCA6BC /* GroupPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPageController.swift; sourceTree = "<group>"; };
 		B143F5CA25E76D6F00CCA6BC /* GroupsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsInfo.swift; sourceTree = "<group>"; };
@@ -58,9 +84,20 @@
 				B143F5C125E4C87700CCA6BC /* PersonalInfoViewCell.swift */,
 				B143F5C725E6261300CCA6BC /* GroupPageController.swift */,
 				B19935A425F74BD00007ED4C /* GroupPageCollectionViewCell.swift */,
-				B19935A525F74BD00007ED4C /* MembersCollectionViewCell.xib */,
 				B1A7B5FC25F5C66200869629 /* LoginPageController.swift */,
 				B1F37B2925F5F8C000BF41C4 /* RegisterPageController.swift */,
+				B1184ED92602E04700627F72 /* -.png */,
+				B1184EDC2602E04700627F72 /* +.png */,
+				B1184ED72602E04700627F72 /* BookClubClassifyTableViewCell.swift */,
+				B1184EDA2602E04700627F72 /* LocationTableViewController.swift */,
+				B1184ED82602E04700627F72 /* LocTableViewCell.swift */,
+				B1184EDB2602E04700627F72 /* TimesTableViewCell.swift */,
+				B1184EDD2602E04700627F72 /* 上傳.png */,
+				B1184ECD2602DFEC00627F72 /* Create_Book_Club_1_ViewController.swift */,
+				B1184ECA2602DFEC00627F72 /* Create_Book_Club_2_ViewController.swift */,
+				B1184ECF2602DFEC00627F72 /* Create_Book_Club_3_ViewController.swift */,
+				B1184ECC2602DFEC00627F72 /* TimesTableViewController.swift */,
+				B1184ECE2602DFEC00627F72 /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -68,6 +105,8 @@
 		B143F5C025E4AE4100CCA6BC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B1184EE62602E06500627F72 /* LuMain.storyboard */,
+				B19935A525F74BD00007ED4C /* MembersCollectionViewCell.xib */,
 				B1EB088525B730D4006D4750 /* Main.storyboard */,
 			);
 			path = View;
@@ -172,7 +211,11 @@
 			files = (
 				B1EB088C25B730D5006D4750 /* LaunchScreen.storyboard in Resources */,
 				B19935A725F74BD00007ED4C /* MembersCollectionViewCell.xib in Resources */,
+				B1184EE02602E04700627F72 /* -.png in Resources */,
+				B1184EE82602E06500627F72 /* LuMain.storyboard in Resources */,
+				B1184EE32602E04700627F72 /* +.png in Resources */,
 				B1EB088925B730D5006D4750 /* Assets.xcassets in Resources */,
+				B1184EE42602E04700627F72 /* 上傳.png in Resources */,
 				B1EB088725B730D4006D4750 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,14 +227,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1184EDE2602E04700627F72 /* BookClubClassifyTableViewCell.swift in Sources */,
 				B1EB088425B730D4006D4750 /* SearchViewController.swift in Sources */,
+				B1184EE12602E04700627F72 /* LocationTableViewController.swift in Sources */,
 				B143F5C225E4C87700CCA6BC /* PersonalInfoViewCell.swift in Sources */,
+				B1184EE22602E04700627F72 /* TimesTableViewCell.swift in Sources */,
+				B1184ED32602DFEC00627F72 /* Create_Book_Club_1_ViewController.swift in Sources */,
 				B143F5CB25E76D6F00CCA6BC /* GroupsInfo.swift in Sources */,
+				B1184ED42602DFEC00627F72 /* ViewController.swift in Sources */,
 				B143F5C825E6261300CCA6BC /* GroupPageController.swift in Sources */,
 				B1EB088025B730D4006D4750 /* AppDelegate.swift in Sources */,
 				B19935A625F74BD00007ED4C /* GroupPageCollectionViewCell.swift in Sources */,
+				B1184ED22602DFEC00627F72 /* TimesTableViewController.swift in Sources */,
+				B1184ED52602DFEC00627F72 /* Create_Book_Club_3_ViewController.swift in Sources */,
 				B1EB088225B730D4006D4750 /* SceneDelegate.swift in Sources */,
 				B1A7B5FD25F5C66200869629 /* LoginPageController.swift in Sources */,
+				B1184EDF2602E04700627F72 /* LocTableViewCell.swift in Sources */,
+				B1184ED02602DFEC00627F72 /* Create_Book_Club_2_ViewController.swift in Sources */,
 				B1F37B2A25F5F8C000BF41C4 /* RegisterPageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,6 +251,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		B1184EE62602E06500627F72 /* LuMain.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B1184EE72602E06500627F72 /* Base */,
+			);
+			name = LuMain.storyboard;
+			sourceTree = "<group>";
+		};
 		B1EB088525B730D4006D4750 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -268,7 +328,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -322,7 +382,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -339,6 +399,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UN2JYFQYB5;
 				INFOPLIST_FILE = "Study Group App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -357,6 +418,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UN2JYFQYB5;
 				INFOPLIST_FILE = "Study Group App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
